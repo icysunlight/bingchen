@@ -1,1 +1,3 @@
-/root/code/bingchen/build/base/CMakeFiles/TimeStamp.dir
+/root/code/bingchen/build/bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir
+/root/code/bingchen/build/bingchen/base/tests/CMakeFiles/Thread_unittest.dir
+/root/code/bingchen/build/bingchen/base/CMakeFiles/bingchen_base.dir

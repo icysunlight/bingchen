@@ -123,14 +123,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles /root/code/bingchen/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /root/code/bingchen/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles /root/code/bingchen/build/bingchen/base/tests/CMakeFiles/progress.marks
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -139,57 +139,94 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/code/bingchen/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named bingchen_base
+# Convenience name for target.
+bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/rule:
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/rule
+.PHONY : bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/rule
 
-# Build rule for target.
-bingchen_base: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bingchen_base
-.PHONY : bingchen_base
-
-# fast build rule for target.
-bingchen_base/fast:
-	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/build
-.PHONY : bingchen_base/fast
-
-#=============================================================================
-# Target rules for targets named BoundedBlockingQueue_test
-
-# Build rule for target.
-BoundedBlockingQueue_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 BoundedBlockingQueue_test
+# Convenience name for target.
+BoundedBlockingQueue_test: bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/rule
 .PHONY : BoundedBlockingQueue_test
 
 # fast build rule for target.
 BoundedBlockingQueue_test/fast:
-	$(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build
 .PHONY : BoundedBlockingQueue_test/fast
 
-#=============================================================================
-# Target rules for targets named Thread_unittest
+# Convenience name for target.
+bingchen/base/tests/CMakeFiles/Thread_unittest.dir/rule:
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/Thread_unittest.dir/rule
+.PHONY : bingchen/base/tests/CMakeFiles/Thread_unittest.dir/rule
 
-# Build rule for target.
-Thread_unittest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Thread_unittest
+# Convenience name for target.
+Thread_unittest: bingchen/base/tests/CMakeFiles/Thread_unittest.dir/rule
 .PHONY : Thread_unittest
 
 # fast build rule for target.
 Thread_unittest/fast:
-	$(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build
 .PHONY : Thread_unittest/fast
+
+BoundedBlockingQueue_unittest.o: BoundedBlockingQueue_unittest.cc.o
+.PHONY : BoundedBlockingQueue_unittest.o
+
+# target to build an object file
+BoundedBlockingQueue_unittest.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/BoundedBlockingQueue_unittest.cc.o
+.PHONY : BoundedBlockingQueue_unittest.cc.o
+
+BoundedBlockingQueue_unittest.i: BoundedBlockingQueue_unittest.cc.i
+.PHONY : BoundedBlockingQueue_unittest.i
+
+# target to preprocess a source file
+BoundedBlockingQueue_unittest.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/BoundedBlockingQueue_unittest.cc.i
+.PHONY : BoundedBlockingQueue_unittest.cc.i
+
+BoundedBlockingQueue_unittest.s: BoundedBlockingQueue_unittest.cc.s
+.PHONY : BoundedBlockingQueue_unittest.s
+
+# target to generate assembly for a file
+BoundedBlockingQueue_unittest.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/BoundedBlockingQueue_unittest.cc.s
+.PHONY : BoundedBlockingQueue_unittest.cc.s
+
+Thread_unittest.o: Thread_unittest.cc.o
+.PHONY : Thread_unittest.o
+
+# target to build an object file
+Thread_unittest.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/Thread_unittest.cc.o
+.PHONY : Thread_unittest.cc.o
+
+Thread_unittest.i: Thread_unittest.cc.i
+.PHONY : Thread_unittest.i
+
+# target to preprocess a source file
+Thread_unittest.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/Thread_unittest.cc.i
+.PHONY : Thread_unittest.cc.i
+
+Thread_unittest.s: Thread_unittest.cc.s
+.PHONY : Thread_unittest.s
+
+# target to generate assembly for a file
+Thread_unittest.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/Thread_unittest.cc.s
+.PHONY : Thread_unittest.cc.s
 
 # Help Target
 help:
@@ -197,6 +234,8 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... BoundedBlockingQueue_test"
+	@echo "... Thread_unittest"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
@@ -204,9 +243,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... bingchen_base"
-	@echo "... BoundedBlockingQueue_test"
-	@echo "... Thread_unittest"
+	@echo "... BoundedBlockingQueue_unittest.o"
+	@echo "... BoundedBlockingQueue_unittest.i"
+	@echo "... BoundedBlockingQueue_unittest.s"
+	@echo "... Thread_unittest.o"
+	@echo "... Thread_unittest.i"
+	@echo "... Thread_unittest.s"
 .PHONY : help
 
 
@@ -218,6 +260,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/code/bingchen/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -56,53 +56,142 @@ CMAKE_SOURCE_DIR = /root/code/bingchen
 CMAKE_BINARY_DIR = /root/code/bingchen/build
 
 #=============================================================================
-# Directory level rules for directory base
+# Directory level rules for directory bingchen/base
 
 # Convenience name for "all" pass in the directory.
-base/all: base/CMakeFiles/TimeStamp.dir/all
-.PHONY : base/all
+bingchen/base/all: bingchen/base/CMakeFiles/bingchen_base.dir/all
+bingchen/base/all: bingchen/base/tests/all
+.PHONY : bingchen/base/all
 
 # Convenience name for "clean" pass in the directory.
-base/clean: base/CMakeFiles/TimeStamp.dir/clean
-.PHONY : base/clean
+bingchen/base/clean: bingchen/base/CMakeFiles/bingchen_base.dir/clean
+bingchen/base/clean: bingchen/base/tests/clean
+.PHONY : bingchen/base/clean
 
 # Convenience name for "preinstall" pass in the directory.
-base/preinstall:
-.PHONY : base/preinstall
+bingchen/base/preinstall: bingchen/base/tests/preinstall
+.PHONY : bingchen/base/preinstall
 
 #=============================================================================
-# Target rules for target base/CMakeFiles/TimeStamp.dir
+# Target rules for target bingchen/base/CMakeFiles/bingchen_base.dir
 
 # All Build rule for target.
-base/CMakeFiles/TimeStamp.dir/all:
-	$(MAKE) -f base/CMakeFiles/TimeStamp.dir/build.make base/CMakeFiles/TimeStamp.dir/depend
-	$(MAKE) -f base/CMakeFiles/TimeStamp.dir/build.make base/CMakeFiles/TimeStamp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  1
-	@echo "Built target TimeStamp"
-.PHONY : base/CMakeFiles/TimeStamp.dir/all
+bingchen/base/CMakeFiles/bingchen_base.dir/all:
+	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/depend
+	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  3 4 5
+	@echo "Built target bingchen_base"
+.PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/all
 
 # Include target in all.
-all: base/CMakeFiles/TimeStamp.dir/all
+all: bingchen/base/CMakeFiles/bingchen_base.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-base/CMakeFiles/TimeStamp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 base/CMakeFiles/TimeStamp.dir/all
+bingchen/base/CMakeFiles/bingchen_base.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 bingchen/base/CMakeFiles/bingchen_base.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 0
-.PHONY : base/CMakeFiles/TimeStamp.dir/rule
+.PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/rule
 
 # Convenience name for target.
-TimeStamp: base/CMakeFiles/TimeStamp.dir/rule
-.PHONY : TimeStamp
+bingchen_base: bingchen/base/CMakeFiles/bingchen_base.dir/rule
+.PHONY : bingchen_base
 
 # clean rule for target.
-base/CMakeFiles/TimeStamp.dir/clean:
-	$(MAKE) -f base/CMakeFiles/TimeStamp.dir/build.make base/CMakeFiles/TimeStamp.dir/clean
-.PHONY : base/CMakeFiles/TimeStamp.dir/clean
+bingchen/base/CMakeFiles/bingchen_base.dir/clean:
+	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/clean
+.PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/clean
 
 # clean rule for target.
-clean: base/CMakeFiles/TimeStamp.dir/clean
+clean: bingchen/base/CMakeFiles/bingchen_base.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory bingchen/base/tests
+
+# Convenience name for "all" pass in the directory.
+bingchen/base/tests/all: bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/all
+bingchen/base/tests/all: bingchen/base/tests/CMakeFiles/Thread_unittest.dir/all
+.PHONY : bingchen/base/tests/all
+
+# Convenience name for "clean" pass in the directory.
+bingchen/base/tests/clean: bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/clean
+bingchen/base/tests/clean: bingchen/base/tests/CMakeFiles/Thread_unittest.dir/clean
+.PHONY : bingchen/base/tests/clean
+
+# Convenience name for "preinstall" pass in the directory.
+bingchen/base/tests/preinstall:
+.PHONY : bingchen/base/tests/preinstall
+
+#=============================================================================
+# Target rules for target bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir
+
+# All Build rule for target.
+bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/all: bingchen/base/CMakeFiles/bingchen_base.dir/all
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/depend
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  1
+	@echo "Built target BoundedBlockingQueue_test"
+.PHONY : bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/all
+
+# Include target in all.
+all: bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 0
+.PHONY : bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/rule
+
+# Convenience name for target.
+BoundedBlockingQueue_test: bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/rule
+.PHONY : BoundedBlockingQueue_test
+
+# clean rule for target.
+bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/clean:
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/clean
+.PHONY : bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/clean
+
+# clean rule for target.
+clean: bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target bingchen/base/tests/CMakeFiles/Thread_unittest.dir
+
+# All Build rule for target.
+bingchen/base/tests/CMakeFiles/Thread_unittest.dir/all: bingchen/base/CMakeFiles/bingchen_base.dir/all
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/depend
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  2
+	@echo "Built target Thread_unittest"
+.PHONY : bingchen/base/tests/CMakeFiles/Thread_unittest.dir/all
+
+# Include target in all.
+all: bingchen/base/tests/CMakeFiles/Thread_unittest.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+bingchen/base/tests/CMakeFiles/Thread_unittest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/Thread_unittest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 0
+.PHONY : bingchen/base/tests/CMakeFiles/Thread_unittest.dir/rule
+
+# Convenience name for target.
+Thread_unittest: bingchen/base/tests/CMakeFiles/Thread_unittest.dir/rule
+.PHONY : Thread_unittest
+
+# clean rule for target.
+bingchen/base/tests/CMakeFiles/Thread_unittest.dir/clean:
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/clean
+.PHONY : bingchen/base/tests/CMakeFiles/Thread_unittest.dir/clean
+
+# clean rule for target.
+clean: bingchen/base/tests/CMakeFiles/Thread_unittest.dir/clean
 .PHONY : clean
 
 #=============================================================================

@@ -123,14 +123,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles /root/code/bingchen/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /root/code/bingchen/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles /root/code/bingchen/build/bingchen/base/CMakeFiles/progress.marks
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/clean
 .PHONY : clean
 
 # The main clean target
@@ -139,57 +139,104 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/code/bingchen/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named bingchen_base
+# Convenience name for target.
+bingchen/base/CMakeFiles/bingchen_base.dir/rule:
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/CMakeFiles/bingchen_base.dir/rule
+.PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/rule
 
-# Build rule for target.
-bingchen_base: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bingchen_base
+# Convenience name for target.
+bingchen_base: bingchen/base/CMakeFiles/bingchen_base.dir/rule
 .PHONY : bingchen_base
 
 # fast build rule for target.
 bingchen_base/fast:
-	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/build
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/build
 .PHONY : bingchen_base/fast
 
-#=============================================================================
-# Target rules for targets named BoundedBlockingQueue_test
+Exception.o: Exception.cc.o
+.PHONY : Exception.o
 
-# Build rule for target.
-BoundedBlockingQueue_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 BoundedBlockingQueue_test
-.PHONY : BoundedBlockingQueue_test
+# target to build an object file
+Exception.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/Exception.cc.o
+.PHONY : Exception.cc.o
 
-# fast build rule for target.
-BoundedBlockingQueue_test/fast:
-	$(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build
-.PHONY : BoundedBlockingQueue_test/fast
+Exception.i: Exception.cc.i
+.PHONY : Exception.i
 
-#=============================================================================
-# Target rules for targets named Thread_unittest
+# target to preprocess a source file
+Exception.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/Exception.cc.i
+.PHONY : Exception.cc.i
 
-# Build rule for target.
-Thread_unittest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Thread_unittest
-.PHONY : Thread_unittest
+Exception.s: Exception.cc.s
+.PHONY : Exception.s
 
-# fast build rule for target.
-Thread_unittest/fast:
-	$(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build
-.PHONY : Thread_unittest/fast
+# target to generate assembly for a file
+Exception.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/Exception.cc.s
+.PHONY : Exception.cc.s
+
+Thread.o: Thread.cc.o
+.PHONY : Thread.o
+
+# target to build an object file
+Thread.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o
+.PHONY : Thread.cc.o
+
+Thread.i: Thread.cc.i
+.PHONY : Thread.i
+
+# target to preprocess a source file
+Thread.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.i
+.PHONY : Thread.cc.i
+
+Thread.s: Thread.cc.s
+.PHONY : Thread.s
+
+# target to generate assembly for a file
+Thread.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.s
+.PHONY : Thread.cc.s
+
+TimeStamp.o: TimeStamp.cc.o
+.PHONY : TimeStamp.o
+
+# target to build an object file
+TimeStamp.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o
+.PHONY : TimeStamp.cc.o
+
+TimeStamp.i: TimeStamp.cc.i
+.PHONY : TimeStamp.i
+
+# target to preprocess a source file
+TimeStamp.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.i
+.PHONY : TimeStamp.cc.i
+
+TimeStamp.s: TimeStamp.cc.s
+.PHONY : TimeStamp.s
+
+# target to generate assembly for a file
+TimeStamp.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.s
+.PHONY : TimeStamp.cc.s
 
 # Help Target
 help:
@@ -197,6 +244,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... bingchen_base"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
@@ -204,9 +252,15 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... bingchen_base"
-	@echo "... BoundedBlockingQueue_test"
-	@echo "... Thread_unittest"
+	@echo "... Exception.o"
+	@echo "... Exception.i"
+	@echo "... Exception.s"
+	@echo "... Thread.o"
+	@echo "... Thread.i"
+	@echo "... Thread.s"
+	@echo "... TimeStamp.o"
+	@echo "... TimeStamp.i"
+	@echo "... TimeStamp.s"
 .PHONY : help
 
 
@@ -218,6 +272,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/code/bingchen/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

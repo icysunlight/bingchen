@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/code/bingchen/bingchen/base/CurrentThread.h
+
+/root/code/bingchen/bingchen/base/Thread.cc
+Thread.h
+/root/code/bingchen/bingchen/base/Thread.h
+pthread.h
+-
+cassert
+-
+cstdio
+-
+sys/types.h
+-
+sys/syscall.h
+-
+CurrentThread.h
+/root/code/bingchen/bingchen/base/CurrentThread.h
+
+/root/code/bingchen/bingchen/base/Thread.h
+boost/noncopyable.hpp
+-
+boost/function.hpp
+-
+pthread.h
+-
+string
+-
+sys/types.h
+-
+atomic.h
+/root/code/bingchen/bingchen/base/atomic.h
+
+/root/code/bingchen/bingchen/base/atomic.h
+boost/noncopyable.hpp
+-
+
