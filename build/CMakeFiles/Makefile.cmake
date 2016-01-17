@@ -60,5 +60,6 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 SET(CMAKE_DEPEND_INFO_FILES
   "bingchen/base/CMakeFiles/bingchen_base.dir/DependInfo.cmake"
   "bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/DependInfo.cmake"
+  "bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/DependInfo.cmake"
   "bingchen/base/tests/CMakeFiles/Thread_unittest.dir/DependInfo.cmake"
   )

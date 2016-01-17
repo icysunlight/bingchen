@@ -9,6 +9,14 @@ bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o: ../bingchen/base/Thread.
 bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o: ../bingchen/base/Thread.h
 bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o: ../bingchen/base/atomic.h
 
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o: ../bingchen/base/Condition.h
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o: ../bingchen/base/CurrentThread.h
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o: ../bingchen/base/MutexLock.h
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o: ../bingchen/base/Thread.h
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o: ../bingchen/base/ThreadPool.cc
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o: ../bingchen/base/ThreadPool.h
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o: ../bingchen/base/atomic.h
+
 bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o: ../bingchen/base/TimeStamp.cc
 bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o: ../bingchen/base/TimeStamp.h
 bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o: ../bingchen/base/copyable.h

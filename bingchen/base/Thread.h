@@ -34,6 +34,7 @@ public:
 
     void start();
     int join();
+    void runInthread();
     
 
     std::string name() {return name_;}

@@ -121,11 +121,35 @@ bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o.provides: bingchen/base/C
 
 bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o.provides.build: bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o
 
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o: bingchen/base/CMakeFiles/bingchen_base.dir/flags.make
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o: ../bingchen/base/ThreadPool.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o"
+	cd /root/code/bingchen/build/bingchen/base && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/bingchen_base.dir/ThreadPool.cc.o -c /root/code/bingchen/bingchen/base/ThreadPool.cc
+
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bingchen_base.dir/ThreadPool.cc.i"
+	cd /root/code/bingchen/build/bingchen/base && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/code/bingchen/bingchen/base/ThreadPool.cc > CMakeFiles/bingchen_base.dir/ThreadPool.cc.i
+
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bingchen_base.dir/ThreadPool.cc.s"
+	cd /root/code/bingchen/build/bingchen/base && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/code/bingchen/bingchen/base/ThreadPool.cc -o CMakeFiles/bingchen_base.dir/ThreadPool.cc.s
+
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o.requires:
+.PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o.requires
+
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o.provides: bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o.requires
+	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o.provides.build
+.PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o.provides
+
+bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o.provides.build: bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o
+
 # Object files for target bingchen_base
 bingchen_base_OBJECTS = \
 "CMakeFiles/bingchen_base.dir/Exception.cc.o" \
 "CMakeFiles/bingchen_base.dir/TimeStamp.cc.o" \
-"CMakeFiles/bingchen_base.dir/Thread.cc.o"
+"CMakeFiles/bingchen_base.dir/Thread.cc.o" \
+"CMakeFiles/bingchen_base.dir/ThreadPool.cc.o"
 
 # External object files for target bingchen_base
 bingchen_base_EXTERNAL_OBJECTS =
@@ -133,6 +157,7 @@ bingchen_base_EXTERNAL_OBJECTS =
 lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/Exception.cc.o
 lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o
 lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o
+lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o
 lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/build.make
 lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../../lib/libbingchen_base.a"
@@ -146,6 +171,7 @@ bingchen/base/CMakeFiles/bingchen_base.dir/build: lib/libbingchen_base.a
 bingchen/base/CMakeFiles/bingchen_base.dir/requires: bingchen/base/CMakeFiles/bingchen_base.dir/Exception.cc.o.requires
 bingchen/base/CMakeFiles/bingchen_base.dir/requires: bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o.requires
 bingchen/base/CMakeFiles/bingchen_base.dir/requires: bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o.requires
+bingchen/base/CMakeFiles/bingchen_base.dir/requires: bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o.requires
 .PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/requires
 
 bingchen/base/CMakeFiles/bingchen_base.dir/clean:

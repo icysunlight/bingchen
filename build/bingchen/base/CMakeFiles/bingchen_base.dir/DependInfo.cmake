@@ -6,6 +6,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/root/code/bingchen/bingchen/base/Exception.cc" "/root/code/bingchen/build/bingchen/base/CMakeFiles/bingchen_base.dir/Exception.cc.o"
   "/root/code/bingchen/bingchen/base/Thread.cc" "/root/code/bingchen/build/bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o"
+  "/root/code/bingchen/bingchen/base/ThreadPool.cc" "/root/code/bingchen/build/bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o"
   "/root/code/bingchen/bingchen/base/TimeStamp.cc" "/root/code/bingchen/build/bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")

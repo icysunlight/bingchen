@@ -167,6 +167,20 @@ BoundedBlockingQueue_test/fast:
 .PHONY : BoundedBlockingQueue_test/fast
 
 # Convenience name for target.
+bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/rule:
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/rule
+.PHONY : bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/rule
+
+# Convenience name for target.
+ThreadPool_test: bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/rule
+.PHONY : ThreadPool_test
+
+# fast build rule for target.
+ThreadPool_test/fast:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/build
+.PHONY : ThreadPool_test/fast
+
+# Convenience name for target.
 bingchen/base/tests/CMakeFiles/Thread_unittest.dir/rule:
 	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/Thread_unittest.dir/rule
 .PHONY : bingchen/base/tests/CMakeFiles/Thread_unittest.dir/rule
@@ -204,6 +218,30 @@ BoundedBlockingQueue_unittest.cc.s:
 	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/BoundedBlockingQueue_unittest.cc.s
 .PHONY : BoundedBlockingQueue_unittest.cc.s
 
+ThreadPool_test.o: ThreadPool_test.cc.o
+.PHONY : ThreadPool_test.o
+
+# target to build an object file
+ThreadPool_test.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/ThreadPool_test.cc.o
+.PHONY : ThreadPool_test.cc.o
+
+ThreadPool_test.i: ThreadPool_test.cc.i
+.PHONY : ThreadPool_test.i
+
+# target to preprocess a source file
+ThreadPool_test.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/ThreadPool_test.cc.i
+.PHONY : ThreadPool_test.cc.i
+
+ThreadPool_test.s: ThreadPool_test.cc.s
+.PHONY : ThreadPool_test.s
+
+# target to generate assembly for a file
+ThreadPool_test.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/ThreadPool_test.cc.s
+.PHONY : ThreadPool_test.cc.s
+
 Thread_unittest.o: Thread_unittest.cc.o
 .PHONY : Thread_unittest.o
 
@@ -235,6 +273,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... BoundedBlockingQueue_test"
+	@echo "... ThreadPool_test"
 	@echo "... Thread_unittest"
 	@echo "... edit_cache"
 	@echo "... install"
@@ -246,6 +285,9 @@ help:
 	@echo "... BoundedBlockingQueue_unittest.o"
 	@echo "... BoundedBlockingQueue_unittest.i"
 	@echo "... BoundedBlockingQueue_unittest.s"
+	@echo "... ThreadPool_test.o"
+	@echo "... ThreadPool_test.i"
+	@echo "... ThreadPool_test.s"
 	@echo "... Thread_unittest.o"
 	@echo "... Thread_unittest.i"
 	@echo "... Thread_unittest.s"

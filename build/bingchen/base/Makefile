@@ -214,6 +214,30 @@ Thread.cc.s:
 	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.s
 .PHONY : Thread.cc.s
 
+ThreadPool.o: ThreadPool.cc.o
+.PHONY : ThreadPool.o
+
+# target to build an object file
+ThreadPool.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o
+.PHONY : ThreadPool.cc.o
+
+ThreadPool.i: ThreadPool.cc.i
+.PHONY : ThreadPool.i
+
+# target to preprocess a source file
+ThreadPool.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.i
+.PHONY : ThreadPool.cc.i
+
+ThreadPool.s: ThreadPool.cc.s
+.PHONY : ThreadPool.s
+
+# target to generate assembly for a file
+ThreadPool.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.s
+.PHONY : ThreadPool.cc.s
+
 TimeStamp.o: TimeStamp.cc.o
 .PHONY : TimeStamp.o
 
@@ -258,6 +282,9 @@ help:
 	@echo "... Thread.o"
 	@echo "... Thread.i"
 	@echo "... Thread.s"
+	@echo "... ThreadPool.o"
+	@echo "... ThreadPool.i"
+	@echo "... ThreadPool.s"
 	@echo "... TimeStamp.o"
 	@echo "... TimeStamp.i"
 	@echo "... TimeStamp.s"

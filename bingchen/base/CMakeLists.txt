@@ -2,6 +2,7 @@ set(base_SRCS
   Exception.cc
   TimeStamp.cc
   Thread.cc
+  ThreadPool.cc
   )
 
 add_library(bingchen_base ${base_SRCS})

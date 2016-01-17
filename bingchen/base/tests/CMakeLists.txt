@@ -3,3 +3,6 @@ target_link_libraries(Thread_unittest bingchen_base)
 
 add_executable(BoundedBlockingQueue_test BoundedBlockingQueue_unittest.cc)
 target_link_libraries(BoundedBlockingQueue_test bingchen_base)
+
+add_executable(ThreadPool_test ThreadPool_test.cc)
+target_link_libraries(ThreadPool_test bingchen_base)

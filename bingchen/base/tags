@@ -25,12 +25,15 @@ MutexLock	MutexLock.h	/^    MutexLock() {$/;"	f	class:bingchen::MutexLock
 MutexLock	MutexLock.h	/^class MutexLock : public boost::noncopyable$/;"	c	namespace:bingchen
 MutexLockGuard	MutexLock.h	/^    MutexLockGuard(MutexLock& mutexlock) $/;"	f	class:bingchen::MutexLockGuard
 MutexLockGuard	MutexLock.h	/^class MutexLockGuard : public boost::noncopyable$/;"	c	namespace:bingchen
+Task	ThreadPool.h	/^    typedef boost::function<void ()> Task;$/;"	t	class:bingchen::ThreadPool
 Thread	Thread.cc	/^Thread::Thread(const Thread::ThreadFunc& func,const std::string& name) :$/;"	f	class:Thread
 Thread	Thread.h	/^class Thread : public boost::noncopyable$/;"	c	namespace:bingchen
 ThreadFun	tests/MutexLock_unittest.cc	/^void ThreadFun() {$/;"	f
 ThreadFunc	Thread.h	/^    typedef boost::function<void ()> ThreadFunc;$/;"	t	class:bingchen::Thread
 ThreadNameInit	Thread.cc	/^    ThreadNameInit() {$/;"	f	class:ThreadNameInit
 ThreadNameInit	Thread.cc	/^class ThreadNameInit{$/;"	c	file:
+ThreadPool	ThreadPool.h	/^    ThreadPool(const string& name = "ThreadPool") $/;"	f	class:bingchen::ThreadPool
+ThreadPool	ThreadPool.h	/^class ThreadPool$/;"	c	namespace:bingchen
 TimeStamp	TimeStamp.h	/^    TimeStamp()$/;"	f	class:bingchen::TimeStamp
 TimeStamp	TimeStamp.h	/^    explicit TimeStamp(int64_t microSecondsSinceEpoc)$/;"	f	class:bingchen::TimeStamp
 TimeStamp	TimeStamp.h	/^class TimeStamp : public bingchen::copyable$/;"	c	namespace:bingchen
@@ -42,6 +45,7 @@ __BINGCHEN_BASE_BOUNDEDBLOCKINGQUEUE_	BoundedBlockingQueue.h	2;"	d
 __BINGCHEN_BASE_CONDITION_H_	Condition.h	2;"	d
 __BINGCHEN_BASE_COUNTDOWNLATCH_H_	CountDownLatch.h	2;"	d
 __BINGCHEN_BASE_MUTEXLOCK_H_	MutexLock.h	2;"	d
+__BINGCHEN_BASE_THREADPOOL_	ThreadPool.h	2;"	d
 __BINGCHEN_CURRENTTHREAD_H_	CurrentThread.h	2;"	d
 __BINGCHEN_EXCEPTION_H_	exception.h	2;"	d
 __BINGCHEN_THREAD_H_	Thread.h	2;"	d
@@ -65,6 +69,7 @@ bingchen	CurrentThread.h	/^namespace bingchen $/;"	n
 bingchen	MutexLock.h	/^namespace bingchen {$/;"	n
 bingchen	Thread.cc	/^namespace bingchen {$/;"	n	file:
 bingchen	Thread.h	/^namespace bingchen{$/;"	n
+bingchen	ThreadPool.h	/^namespace bingchen {$/;"	n
 bingchen	TimeStamp.h	/^namespace bingchen {$/;"	n
 bingchen	atomic.h	/^namespace bingchen {$/;"	n
 bingchen	copyable.h	/^namespace bingchen {$/;"	n
@@ -84,6 +89,7 @@ exception	exception.h	/^class exception : public std::exception$/;"	c	namespace:
 fillBackTrace	Exception.cc	/^void exception::fillBackTrace() {$/;"	f	class:exception
 foo	tests/exception_unittest.cpp	/^        int foo() {$/;"	f	class:bar
 full	BoundedBlockingQueue.h	/^    bool full() const {$/;"	f	class:bingchen::BoundedBlockingQueue
+full	ThreadPool.cc	/^bool ThreadPool::full() {$/;"	f	class:ThreadPool
 func_	Thread.h	/^    ThreadFunc func_;$/;"	m	class:bingchen::Thread
 g_mutex	tests/MutexLock_unittest.cc	/^MutexLock g_mutex;$/;"	v
 g_vec	tests/MutexLock_unittest.cc	/^std::vector<int> g_vec;$/;"	v
@@ -109,9 +115,11 @@ main	tests/BlockingQueue_unittest.cc	/^int main()$/;"	f
 main	tests/BoundedBlockingQueue_unittest.cc	/^int main() {$/;"	f
 main	tests/CountDownLatch_unittest.cc	/^int main() {$/;"	f
 main	tests/MutexLock_unittest.cc	/^int main() {$/;"	f
+main	tests/ThreadPool_test.cc	/^int main() {$/;"	f
 main	tests/Thread_unittest.cc	/^int main() {$/;"	f
 main	tests/atomic_unittest.cc	/^int main() {$/;"	f
 main	tests/exception_unittest.cpp	/^int main() {$/;"	f
+maxQueueSize_	ThreadPool.h	/^    int maxQueueSize_;$/;"	m	class:bingchen::ThreadPool
 message_	exception.h	/^    std::string message_;$/;"	m	class:bingchen::exception
 microSecondsSinceEpoc	TimeStamp.h	/^    int64_t microSecondsSinceEpoc() const {$/;"	f	class:bingchen::TimeStamp
 microSecondsSinceEpoc_	TimeStamp.h	/^    int64_t microSecondsSinceEpoc_;$/;"	m	class:bingchen::TimeStamp
@@ -121,13 +129,18 @@ mutex_	BoundedBlockingQueue.h	/^    mutable MutexLock mutex_;$/;"	m	class:bingch
 mutex_	Condition.h	/^    MutexLock& mutex_;$/;"	m	class:bingchen::Condition
 mutex_	CountDownLatch.h	/^    mutable MutexLock mutex_;$/;"	m	class:bingchen::CountDownLatch
 mutex_	MutexLock.h	/^    pthread_mutex_t mutex_;$/;"	m	class:bingchen::MutexLock
+mutex_	ThreadPool.h	/^    MutexLock mutex_;$/;"	m	class:bingchen::ThreadPool
 mutexcond_	CountDownLatch.h	/^    MutexLock mutexcond_;$/;"	m	class:bingchen::CountDownLatch
 mutexlock_	MutexLock.h	/^        MutexLock& mutexlock_;$/;"	m	class:bingchen::MutexLock::UnAssignGuard
 name	Thread.h	/^    std::string name() {return name_;}$/;"	f	class:bingchen::Thread
 name_	Thread.h	/^    std::string name_;$/;"	m	class:bingchen::Thread
+name_	ThreadPool.h	/^    std::string name_;$/;"	m	class:bingchen::ThreadPool
+notEmpty	ThreadPool.cc	/^bool ThreadPool::notEmpty() {$/;"	f	class:ThreadPool
 notEmpty_	BlockingQueue.h	/^    Condition notEmpty_;$/;"	m	class:bingchen::BlockingQueue
 notEmpty_	BoundedBlockingQueue.h	/^    Condition notEmpty_;$/;"	m	class:bingchen::BoundedBlockingQueue
+notEmpty_	ThreadPool.h	/^    Condition notEmpty_;$/;"	m	class:bingchen::ThreadPool
 notFull_	BoundedBlockingQueue.h	/^    Condition notFull_;$/;"	m	class:bingchen::BoundedBlockingQueue
+notFull_	ThreadPool.h	/^    Condition notFull_;$/;"	m	class:bingchen::ThreadPool
 notify	Condition.h	/^    int notify() {$/;"	f	class:bingchen::Condition
 notifyAll	Condition.h	/^    int notifyAll() {$/;"	f	class:bingchen::Condition
 now	TimeStamp.h	/^    static TimeStamp now() {$/;"	f	class:bingchen::TimeStamp
@@ -140,21 +153,29 @@ preThreadFunc	tests/CountDownLatch_unittest.cc	/^void preThreadFunc(CountDownLat
 pthreadId_	Thread.h	/^    pthread_t pthreadId_;$/;"	m	class:bingchen::Thread
 put	BlockingQueue.h	/^    void put(T x) {$/;"	f	class:bingchen::BlockingQueue
 put	BoundedBlockingQueue.h	/^    void put(const T& x) {$/;"	f	class:bingchen::BoundedBlockingQueue
+put	ThreadPool.cc	/^void ThreadPool::put(const Task& task) {$/;"	f	class:ThreadPool
 que_	BlockingQueue.h	/^    std::deque<T> que_;$/;"	m	class:bingchen::BlockingQueue
 queue_	BoundedBlockingQueue.h	/^    boost::circular_buffer<T> queue_;$/;"	m	class:bingchen::BoundedBlockingQueue
+queue_	ThreadPool.h	/^    std::queue<Task> queue_;$/;"	m	class:bingchen::ThreadPool
 run	Thread.cc	/^void* Thread::run(void* arg) { $/;"	f	class:Thread
+runInThread	ThreadPool.cc	/^void ThreadPool::runInThread() {$/;"	f	class:ThreadPool
+running_	ThreadPool.h	/^    bool running_;$/;"	m	class:bingchen::ThreadPool
 secondsSinceEpoch	TimeStamp.h	/^    time_t secondsSinceEpoch() {$/;"	f	class:bingchen::TimeStamp
 setDefaultName	Thread.cc	/^void Thread::setDefaultName() {$/;"	f	class:Thread
+setMaxQueueSize	ThreadPool.cc	/^void ThreadPool::setMaxQueueSize(int maxSize) {$/;"	f	class:ThreadPool
 size	BlockingQueue.h	/^    int size() {$/;"	f	class:bingchen::BlockingQueue
 size	BoundedBlockingQueue.h	/^    int size() const {$/;"	f	class:bingchen::BoundedBlockingQueue
 start	Thread.cc	/^void Thread::start() {$/;"	f	class:Thread
+start	ThreadPool.cc	/^void ThreadPool::start(int numThreads) {$/;"	f	class:ThreadPool
 started_	Thread.h	/^    bool started_;$/;"	m	class:bingchen::Thread
+stop	ThreadPool.cc	/^void ThreadPool::stop() {$/;"	f	class:ThreadPool
 swap	TimeStamp.h	/^    void swap(TimeStamp& that) {$/;"	f	class:bingchen::TimeStamp
 t_cachedTid	Thread.cc	/^    __thread pid_t t_cachedTid = 0;$/;"	m	namespace:bingchen::CurrentThread	file:
 t_threadName	Thread.cc	/^    __thread const char* t_threadName;$/;"	m	namespace:bingchen::CurrentThread	file:
 t_tidString	Thread.cc	/^    __thread char t_tidString[32];$/;"	m	namespace:bingchen::CurrentThread	file:
 take	BlockingQueue.h	/^    T take() {$/;"	f	class:bingchen::BlockingQueue
 take	BoundedBlockingQueue.h	/^    T take() {$/;"	f	class:bingchen::BoundedBlockingQueue
+take	ThreadPool.cc	/^ThreadPool::Task ThreadPool::take() {$/;"	f	class:ThreadPool
 test	tests/exception_unittest.cpp	/^void test() {$/;"	f
 threadFun1	Thread_unittest.cc	/^    void threadFun1() {$/;"	f	class:Bar
 threadFun1	Thread_unittest.cc	/^void threadFun1() {$/;"	f
@@ -164,8 +185,10 @@ threadFun2	Thread_unittest.cc	/^    void threadFun2(int a) {$/;"	f	class:Bar
 threadFun2	Thread_unittest.cc	/^void threadFun2(int a) {$/;"	f
 threadFun2	tests/Thread_unittest.cc	/^    void threadFun2(int a) {$/;"	f	class:Bar
 threadFun2	tests/Thread_unittest.cc	/^void threadFun2(int a) {$/;"	f
+threadFunc	tests/ThreadPool_test.cc	/^int threadFunc(int num) {$/;"	f
 threadNameInit	Thread.cc	/^ThreadNameInit threadNameInit;$/;"	v
 threadname	Thread.cc	/^const char* threadname() {$/;"	f	namespace:bingchen::CurrentThread
+threads_	ThreadPool.h	/^    boost::ptr_vector<Thread> threads_;$/;"	m	class:bingchen::ThreadPool
 tid	Thread.cc	/^pid_t tid() {$/;"	f	namespace:bingchen::CurrentThread
 tid	Thread.h	/^    pid_t tid() {return tid_;}$/;"	f	class:bingchen::Thread
 tidString	Thread.cc	/^const char* tidString() {$/;"	f	namespace:bingchen::CurrentThread
@@ -187,5 +210,6 @@ x_	tests/Thread_unittest.cc	/^    int x_;$/;"	m	class:Bar	file:
 ~MutexLock	MutexLock.h	/^    ~MutexLock() {$/;"	f	class:bingchen::MutexLock
 ~MutexLockGuard	MutexLock.h	/^    ~MutexLockGuard(){$/;"	f	class:bingchen::MutexLockGuard
 ~Thread	Thread.cc	/^Thread::~Thread() {$/;"	f	class:Thread
+~ThreadPool	ThreadPool.cc	/^ThreadPool::~ThreadPool(){$/;"	f	class:ThreadPool
 ~UnAssignGuard	MutexLock.h	/^        ~UnAssignGuard() {$/;"	f	class:bingchen::MutexLock::UnAssignGuard
 ~exception	Exception.cc	/^exception::~exception() throw() {$/;"	f	class:exception

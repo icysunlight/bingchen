@@ -1,3 +1,4 @@
 /root/code/bingchen/build/bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir
+/root/code/bingchen/build/bingchen/base/tests/CMakeFiles/ThreadPool_test.dir
 /root/code/bingchen/build/bingchen/base/tests/CMakeFiles/Thread_unittest.dir
 /root/code/bingchen/build/bingchen/base/CMakeFiles/bingchen_base.dir

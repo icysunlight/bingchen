@@ -179,6 +179,19 @@ BoundedBlockingQueue_test/fast:
 .PHONY : BoundedBlockingQueue_test/fast
 
 #=============================================================================
+# Target rules for targets named ThreadPool_test
+
+# Build rule for target.
+ThreadPool_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ThreadPool_test
+.PHONY : ThreadPool_test
+
+# fast build rule for target.
+ThreadPool_test/fast:
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/build
+.PHONY : ThreadPool_test/fast
+
+#=============================================================================
 # Target rules for targets named Thread_unittest
 
 # Build rule for target.
@@ -206,6 +219,7 @@ help:
 	@echo "... test"
 	@echo "... bingchen_base"
 	@echo "... BoundedBlockingQueue_test"
+	@echo "... ThreadPool_test"
 	@echo "... Thread_unittest"
 .PHONY : help
 

@@ -54,6 +54,7 @@ public:
 
     void lock() {
         pthread_mutex_lock(&mutex_);
+        holder_ = CurrentThread::tid();
     }
 
     void unlock() {
