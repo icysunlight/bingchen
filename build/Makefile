@@ -179,6 +179,32 @@ BoundedBlockingQueue_test/fast:
 .PHONY : BoundedBlockingQueue_test/fast
 
 #=============================================================================
+# Target rules for targets named Singleton_test
+
+# Build rule for target.
+Singleton_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Singleton_test
+.PHONY : Singleton_test
+
+# fast build rule for target.
+Singleton_test/fast:
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/build
+.PHONY : Singleton_test/fast
+
+#=============================================================================
+# Target rules for targets named ThreadLocal_test
+
+# Build rule for target.
+ThreadLocal_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ThreadLocal_test
+.PHONY : ThreadLocal_test
+
+# fast build rule for target.
+ThreadLocal_test/fast:
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/build
+.PHONY : ThreadLocal_test/fast
+
+#=============================================================================
 # Target rules for targets named ThreadPool_test
 
 # Build rule for target.
@@ -219,6 +245,8 @@ help:
 	@echo "... test"
 	@echo "... bingchen_base"
 	@echo "... BoundedBlockingQueue_test"
+	@echo "... Singleton_test"
+	@echo "... ThreadLocal_test"
 	@echo "... ThreadPool_test"
 	@echo "... Thread_unittest"
 .PHONY : help

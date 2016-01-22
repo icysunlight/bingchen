@@ -79,7 +79,7 @@ bingchen/base/preinstall: bingchen/base/tests/preinstall
 bingchen/base/CMakeFiles/bingchen_base.dir/all:
 	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/depend
 	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  4 5 6 7
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  6 7 8 9
 	@echo "Built target bingchen_base"
 .PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/all
 
@@ -112,12 +112,16 @@ clean: bingchen/base/CMakeFiles/bingchen_base.dir/clean
 
 # Convenience name for "all" pass in the directory.
 bingchen/base/tests/all: bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/all
+bingchen/base/tests/all: bingchen/base/tests/CMakeFiles/Singleton_test.dir/all
+bingchen/base/tests/all: bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/all
 bingchen/base/tests/all: bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/all
 bingchen/base/tests/all: bingchen/base/tests/CMakeFiles/Thread_unittest.dir/all
 .PHONY : bingchen/base/tests/all
 
 # Convenience name for "clean" pass in the directory.
 bingchen/base/tests/clean: bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/clean
+bingchen/base/tests/clean: bingchen/base/tests/CMakeFiles/Singleton_test.dir/clean
+bingchen/base/tests/clean: bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/clean
 bingchen/base/tests/clean: bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/clean
 bingchen/base/tests/clean: bingchen/base/tests/CMakeFiles/Thread_unittest.dir/clean
 .PHONY : bingchen/base/tests/clean
@@ -162,13 +166,83 @@ clean: bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target bingchen/base/tests/CMakeFiles/Singleton_test.dir
+
+# All Build rule for target.
+bingchen/base/tests/CMakeFiles/Singleton_test.dir/all: bingchen/base/CMakeFiles/bingchen_base.dir/all
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/depend
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  2
+	@echo "Built target Singleton_test"
+.PHONY : bingchen/base/tests/CMakeFiles/Singleton_test.dir/all
+
+# Include target in all.
+all: bingchen/base/tests/CMakeFiles/Singleton_test.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+bingchen/base/tests/CMakeFiles/Singleton_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/Singleton_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 0
+.PHONY : bingchen/base/tests/CMakeFiles/Singleton_test.dir/rule
+
+# Convenience name for target.
+Singleton_test: bingchen/base/tests/CMakeFiles/Singleton_test.dir/rule
+.PHONY : Singleton_test
+
+# clean rule for target.
+bingchen/base/tests/CMakeFiles/Singleton_test.dir/clean:
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/clean
+.PHONY : bingchen/base/tests/CMakeFiles/Singleton_test.dir/clean
+
+# clean rule for target.
+clean: bingchen/base/tests/CMakeFiles/Singleton_test.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir
+
+# All Build rule for target.
+bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/all: bingchen/base/CMakeFiles/bingchen_base.dir/all
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/depend
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  3
+	@echo "Built target ThreadLocal_test"
+.PHONY : bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/all
+
+# Include target in all.
+all: bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 0
+.PHONY : bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/rule
+
+# Convenience name for target.
+ThreadLocal_test: bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/rule
+.PHONY : ThreadLocal_test
+
+# clean rule for target.
+bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/clean:
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/clean
+.PHONY : bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/clean
+
+# clean rule for target.
+clean: bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target bingchen/base/tests/CMakeFiles/ThreadPool_test.dir
 
 # All Build rule for target.
 bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/all: bingchen/base/CMakeFiles/bingchen_base.dir/all
 	$(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/depend
 	$(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  4
 	@echo "Built target ThreadPool_test"
 .PHONY : bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/all
 
@@ -203,7 +277,7 @@ clean: bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/clean
 bingchen/base/tests/CMakeFiles/Thread_unittest.dir/all: bingchen/base/CMakeFiles/bingchen_base.dir/all
 	$(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/depend
 	$(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  5
 	@echo "Built target Thread_unittest"
 .PHONY : bingchen/base/tests/CMakeFiles/Thread_unittest.dir/all
 

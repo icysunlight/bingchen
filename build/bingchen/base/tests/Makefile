@@ -167,6 +167,34 @@ BoundedBlockingQueue_test/fast:
 .PHONY : BoundedBlockingQueue_test/fast
 
 # Convenience name for target.
+bingchen/base/tests/CMakeFiles/Singleton_test.dir/rule:
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/Singleton_test.dir/rule
+.PHONY : bingchen/base/tests/CMakeFiles/Singleton_test.dir/rule
+
+# Convenience name for target.
+Singleton_test: bingchen/base/tests/CMakeFiles/Singleton_test.dir/rule
+.PHONY : Singleton_test
+
+# fast build rule for target.
+Singleton_test/fast:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/build
+.PHONY : Singleton_test/fast
+
+# Convenience name for target.
+bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/rule:
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/rule
+.PHONY : bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/rule
+
+# Convenience name for target.
+ThreadLocal_test: bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/rule
+.PHONY : ThreadLocal_test
+
+# fast build rule for target.
+ThreadLocal_test/fast:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/build
+.PHONY : ThreadLocal_test/fast
+
+# Convenience name for target.
 bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/rule:
 	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/rule
 .PHONY : bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/rule
@@ -217,6 +245,54 @@ BoundedBlockingQueue_unittest.s: BoundedBlockingQueue_unittest.cc.s
 BoundedBlockingQueue_unittest.cc.s:
 	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/BoundedBlockingQueue_unittest.cc.s
 .PHONY : BoundedBlockingQueue_unittest.cc.s
+
+Singleton_test.o: Singleton_test.cc.o
+.PHONY : Singleton_test.o
+
+# target to build an object file
+Singleton_test.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/Singleton_test.cc.o
+.PHONY : Singleton_test.cc.o
+
+Singleton_test.i: Singleton_test.cc.i
+.PHONY : Singleton_test.i
+
+# target to preprocess a source file
+Singleton_test.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/Singleton_test.cc.i
+.PHONY : Singleton_test.cc.i
+
+Singleton_test.s: Singleton_test.cc.s
+.PHONY : Singleton_test.s
+
+# target to generate assembly for a file
+Singleton_test.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/Singleton_test.cc.s
+.PHONY : Singleton_test.cc.s
+
+ThreadLocal_test.o: ThreadLocal_test.cc.o
+.PHONY : ThreadLocal_test.o
+
+# target to build an object file
+ThreadLocal_test.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/ThreadLocal_test.cc.o
+.PHONY : ThreadLocal_test.cc.o
+
+ThreadLocal_test.i: ThreadLocal_test.cc.i
+.PHONY : ThreadLocal_test.i
+
+# target to preprocess a source file
+ThreadLocal_test.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/ThreadLocal_test.cc.i
+.PHONY : ThreadLocal_test.cc.i
+
+ThreadLocal_test.s: ThreadLocal_test.cc.s
+.PHONY : ThreadLocal_test.s
+
+# target to generate assembly for a file
+ThreadLocal_test.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/ThreadLocal_test.cc.s
+.PHONY : ThreadLocal_test.cc.s
 
 ThreadPool_test.o: ThreadPool_test.cc.o
 .PHONY : ThreadPool_test.o
@@ -273,6 +349,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... BoundedBlockingQueue_test"
+	@echo "... Singleton_test"
+	@echo "... ThreadLocal_test"
 	@echo "... ThreadPool_test"
 	@echo "... Thread_unittest"
 	@echo "... edit_cache"
@@ -285,6 +363,12 @@ help:
 	@echo "... BoundedBlockingQueue_unittest.o"
 	@echo "... BoundedBlockingQueue_unittest.i"
 	@echo "... BoundedBlockingQueue_unittest.s"
+	@echo "... Singleton_test.o"
+	@echo "... Singleton_test.i"
+	@echo "... Singleton_test.s"
+	@echo "... ThreadLocal_test.o"
+	@echo "... ThreadLocal_test.i"
+	@echo "... ThreadLocal_test.s"
 	@echo "... ThreadPool_test.o"
 	@echo "... ThreadPool_test.i"
 	@echo "... ThreadPool_test.s"
