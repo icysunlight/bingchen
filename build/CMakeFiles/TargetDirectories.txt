@@ -1,6 +1,7 @@
 /root/code/bingchen/build/bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir
-/root/code/bingchen/build/bingchen/base/tests/CMakeFiles/Singleton_test.dir
+/root/code/bingchen/build/bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir
 /root/code/bingchen/build/bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir
 /root/code/bingchen/build/bingchen/base/tests/CMakeFiles/ThreadPool_test.dir
 /root/code/bingchen/build/bingchen/base/tests/CMakeFiles/Thread_unittest.dir
 /root/code/bingchen/build/bingchen/base/CMakeFiles/bingchen_base.dir
+/root/code/bingchen/build/bingchen/base/tests/CMakeFiles/logging_test.dir

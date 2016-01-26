@@ -262,6 +262,54 @@ TimeStamp.cc.s:
 	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.s
 .PHONY : TimeStamp.cc.s
 
+logging.o: logging.cc.o
+.PHONY : logging.o
+
+# target to build an object file
+logging.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o
+.PHONY : logging.cc.o
+
+logging.i: logging.cc.i
+.PHONY : logging.i
+
+# target to preprocess a source file
+logging.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.i
+.PHONY : logging.cc.i
+
+logging.s: logging.cc.s
+.PHONY : logging.s
+
+# target to generate assembly for a file
+logging.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.s
+.PHONY : logging.cc.s
+
+logstream.o: logstream.cc.o
+.PHONY : logstream.o
+
+# target to build an object file
+logstream.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o
+.PHONY : logstream.cc.o
+
+logstream.i: logstream.cc.i
+.PHONY : logstream.i
+
+# target to preprocess a source file
+logstream.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.i
+.PHONY : logstream.cc.i
+
+logstream.s: logstream.cc.s
+.PHONY : logstream.s
+
+# target to generate assembly for a file
+logstream.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.s
+.PHONY : logstream.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -288,6 +336,12 @@ help:
 	@echo "... TimeStamp.o"
 	@echo "... TimeStamp.i"
 	@echo "... TimeStamp.s"
+	@echo "... logging.o"
+	@echo "... logging.i"
+	@echo "... logging.s"
+	@echo "... logstream.o"
+	@echo "... logstream.i"
+	@echo "... logstream.s"
 .PHONY : help
 
 

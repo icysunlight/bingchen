@@ -3,6 +3,8 @@ set(base_SRCS
   TimeStamp.cc
   Thread.cc
   ThreadPool.cc
+  logging.cc
+  logstream.cc
   )
 
 add_library(bingchen_base ${base_SRCS})

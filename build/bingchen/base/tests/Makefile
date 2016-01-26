@@ -167,18 +167,18 @@ BoundedBlockingQueue_test/fast:
 .PHONY : BoundedBlockingQueue_test/fast
 
 # Convenience name for target.
-bingchen/base/tests/CMakeFiles/Singleton_test.dir/rule:
-	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/Singleton_test.dir/rule
-.PHONY : bingchen/base/tests/CMakeFiles/Singleton_test.dir/rule
+bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/rule:
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/rule
+.PHONY : bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/rule
 
 # Convenience name for target.
-Singleton_test: bingchen/base/tests/CMakeFiles/Singleton_test.dir/rule
-.PHONY : Singleton_test
+ThreadLocalSingleton_test: bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/rule
+.PHONY : ThreadLocalSingleton_test
 
 # fast build rule for target.
-Singleton_test/fast:
-	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/build
-.PHONY : Singleton_test/fast
+ThreadLocalSingleton_test/fast:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/build
+.PHONY : ThreadLocalSingleton_test/fast
 
 # Convenience name for target.
 bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir/rule:
@@ -222,6 +222,20 @@ Thread_unittest/fast:
 	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build
 .PHONY : Thread_unittest/fast
 
+# Convenience name for target.
+bingchen/base/tests/CMakeFiles/logging_test.dir/rule:
+	cd /root/code/bingchen/build && $(MAKE) -f CMakeFiles/Makefile2 bingchen/base/tests/CMakeFiles/logging_test.dir/rule
+.PHONY : bingchen/base/tests/CMakeFiles/logging_test.dir/rule
+
+# Convenience name for target.
+logging_test: bingchen/base/tests/CMakeFiles/logging_test.dir/rule
+.PHONY : logging_test
+
+# fast build rule for target.
+logging_test/fast:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/logging_test.dir/build.make bingchen/base/tests/CMakeFiles/logging_test.dir/build
+.PHONY : logging_test/fast
+
 BoundedBlockingQueue_unittest.o: BoundedBlockingQueue_unittest.cc.o
 .PHONY : BoundedBlockingQueue_unittest.o
 
@@ -246,29 +260,29 @@ BoundedBlockingQueue_unittest.cc.s:
 	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/build.make bingchen/base/tests/CMakeFiles/BoundedBlockingQueue_test.dir/BoundedBlockingQueue_unittest.cc.s
 .PHONY : BoundedBlockingQueue_unittest.cc.s
 
-Singleton_test.o: Singleton_test.cc.o
-.PHONY : Singleton_test.o
+ThreadLocalSingleton_test.o: ThreadLocalSingleton_test.cc.o
+.PHONY : ThreadLocalSingleton_test.o
 
 # target to build an object file
-Singleton_test.cc.o:
-	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/Singleton_test.cc.o
-.PHONY : Singleton_test.cc.o
+ThreadLocalSingleton_test.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/ThreadLocalSingleton_test.cc.o
+.PHONY : ThreadLocalSingleton_test.cc.o
 
-Singleton_test.i: Singleton_test.cc.i
-.PHONY : Singleton_test.i
+ThreadLocalSingleton_test.i: ThreadLocalSingleton_test.cc.i
+.PHONY : ThreadLocalSingleton_test.i
 
 # target to preprocess a source file
-Singleton_test.cc.i:
-	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/Singleton_test.cc.i
-.PHONY : Singleton_test.cc.i
+ThreadLocalSingleton_test.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/ThreadLocalSingleton_test.cc.i
+.PHONY : ThreadLocalSingleton_test.cc.i
 
-Singleton_test.s: Singleton_test.cc.s
-.PHONY : Singleton_test.s
+ThreadLocalSingleton_test.s: ThreadLocalSingleton_test.cc.s
+.PHONY : ThreadLocalSingleton_test.s
 
 # target to generate assembly for a file
-Singleton_test.cc.s:
-	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/Singleton_test.cc.s
-.PHONY : Singleton_test.cc.s
+ThreadLocalSingleton_test.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/ThreadLocalSingleton_test.cc.s
+.PHONY : ThreadLocalSingleton_test.cc.s
 
 ThreadLocal_test.o: ThreadLocal_test.cc.o
 .PHONY : ThreadLocal_test.o
@@ -342,6 +356,30 @@ Thread_unittest.cc.s:
 	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/Thread_unittest.cc.s
 .PHONY : Thread_unittest.cc.s
 
+logging_test.o: logging_test.cc.o
+.PHONY : logging_test.o
+
+# target to build an object file
+logging_test.cc.o:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/logging_test.dir/build.make bingchen/base/tests/CMakeFiles/logging_test.dir/logging_test.cc.o
+.PHONY : logging_test.cc.o
+
+logging_test.i: logging_test.cc.i
+.PHONY : logging_test.i
+
+# target to preprocess a source file
+logging_test.cc.i:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/logging_test.dir/build.make bingchen/base/tests/CMakeFiles/logging_test.dir/logging_test.cc.i
+.PHONY : logging_test.cc.i
+
+logging_test.s: logging_test.cc.s
+.PHONY : logging_test.s
+
+# target to generate assembly for a file
+logging_test.cc.s:
+	cd /root/code/bingchen/build && $(MAKE) -f bingchen/base/tests/CMakeFiles/logging_test.dir/build.make bingchen/base/tests/CMakeFiles/logging_test.dir/logging_test.cc.s
+.PHONY : logging_test.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -349,7 +387,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... BoundedBlockingQueue_test"
-	@echo "... Singleton_test"
+	@echo "... ThreadLocalSingleton_test"
 	@echo "... ThreadLocal_test"
 	@echo "... ThreadPool_test"
 	@echo "... Thread_unittest"
@@ -358,14 +396,15 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... logging_test"
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... BoundedBlockingQueue_unittest.o"
 	@echo "... BoundedBlockingQueue_unittest.i"
 	@echo "... BoundedBlockingQueue_unittest.s"
-	@echo "... Singleton_test.o"
-	@echo "... Singleton_test.i"
-	@echo "... Singleton_test.s"
+	@echo "... ThreadLocalSingleton_test.o"
+	@echo "... ThreadLocalSingleton_test.i"
+	@echo "... ThreadLocalSingleton_test.s"
 	@echo "... ThreadLocal_test.o"
 	@echo "... ThreadLocal_test.i"
 	@echo "... ThreadLocal_test.s"
@@ -375,6 +414,9 @@ help:
 	@echo "... Thread_unittest.o"
 	@echo "... Thread_unittest.i"
 	@echo "... Thread_unittest.s"
+	@echo "... logging_test.o"
+	@echo "... logging_test.i"
+	@echo "... logging_test.s"
 .PHONY : help
 
 

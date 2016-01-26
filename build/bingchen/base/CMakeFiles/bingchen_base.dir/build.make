@@ -144,12 +144,60 @@ bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o.provides: bingchen/ba
 
 bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o.provides.build: bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o
 
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o: bingchen/base/CMakeFiles/bingchen_base.dir/flags.make
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o: ../bingchen/base/logging.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o"
+	cd /root/code/bingchen/build/bingchen/base && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/bingchen_base.dir/logging.cc.o -c /root/code/bingchen/bingchen/base/logging.cc
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bingchen_base.dir/logging.cc.i"
+	cd /root/code/bingchen/build/bingchen/base && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/code/bingchen/bingchen/base/logging.cc > CMakeFiles/bingchen_base.dir/logging.cc.i
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bingchen_base.dir/logging.cc.s"
+	cd /root/code/bingchen/build/bingchen/base && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/code/bingchen/bingchen/base/logging.cc -o CMakeFiles/bingchen_base.dir/logging.cc.s
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o.requires:
+.PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o.requires
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o.provides: bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o.requires
+	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o.provides.build
+.PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o.provides
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o.provides.build: bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o: bingchen/base/CMakeFiles/bingchen_base.dir/flags.make
+bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o: ../bingchen/base/logstream.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o"
+	cd /root/code/bingchen/build/bingchen/base && g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/bingchen_base.dir/logstream.cc.o -c /root/code/bingchen/bingchen/base/logstream.cc
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bingchen_base.dir/logstream.cc.i"
+	cd /root/code/bingchen/build/bingchen/base && g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/code/bingchen/bingchen/base/logstream.cc > CMakeFiles/bingchen_base.dir/logstream.cc.i
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bingchen_base.dir/logstream.cc.s"
+	cd /root/code/bingchen/build/bingchen/base && g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/code/bingchen/bingchen/base/logstream.cc -o CMakeFiles/bingchen_base.dir/logstream.cc.s
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o.requires:
+.PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o.requires
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o.provides: bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o.requires
+	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o.provides.build
+.PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o.provides
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o.provides.build: bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o
+
 # Object files for target bingchen_base
 bingchen_base_OBJECTS = \
 "CMakeFiles/bingchen_base.dir/Exception.cc.o" \
 "CMakeFiles/bingchen_base.dir/TimeStamp.cc.o" \
 "CMakeFiles/bingchen_base.dir/Thread.cc.o" \
-"CMakeFiles/bingchen_base.dir/ThreadPool.cc.o"
+"CMakeFiles/bingchen_base.dir/ThreadPool.cc.o" \
+"CMakeFiles/bingchen_base.dir/logging.cc.o" \
+"CMakeFiles/bingchen_base.dir/logstream.cc.o"
 
 # External object files for target bingchen_base
 bingchen_base_EXTERNAL_OBJECTS =
@@ -158,6 +206,8 @@ lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/Exception.cc.
 lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o
 lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o
 lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o
+lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o
+lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o
 lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/build.make
 lib/libbingchen_base.a: bingchen/base/CMakeFiles/bingchen_base.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../../lib/libbingchen_base.a"
@@ -172,6 +222,8 @@ bingchen/base/CMakeFiles/bingchen_base.dir/requires: bingchen/base/CMakeFiles/bi
 bingchen/base/CMakeFiles/bingchen_base.dir/requires: bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o.requires
 bingchen/base/CMakeFiles/bingchen_base.dir/requires: bingchen/base/CMakeFiles/bingchen_base.dir/Thread.cc.o.requires
 bingchen/base/CMakeFiles/bingchen_base.dir/requires: bingchen/base/CMakeFiles/bingchen_base.dir/ThreadPool.cc.o.requires
+bingchen/base/CMakeFiles/bingchen_base.dir/requires: bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o.requires
+bingchen/base/CMakeFiles/bingchen_base.dir/requires: bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o.requires
 .PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/requires
 
 bingchen/base/CMakeFiles/bingchen_base.dir/clean:

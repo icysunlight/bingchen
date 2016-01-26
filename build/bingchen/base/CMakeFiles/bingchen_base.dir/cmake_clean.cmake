@@ -3,6 +3,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/bingchen_base.dir/TimeStamp.cc.o"
   "CMakeFiles/bingchen_base.dir/Thread.cc.o"
   "CMakeFiles/bingchen_base.dir/ThreadPool.cc.o"
+  "CMakeFiles/bingchen_base.dir/logging.cc.o"
+  "CMakeFiles/bingchen_base.dir/logstream.cc.o"
   "../../lib/libbingchen_base.pdb"
   "../../lib/libbingchen_base.a"
 )

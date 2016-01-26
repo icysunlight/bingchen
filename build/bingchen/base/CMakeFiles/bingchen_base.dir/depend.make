@@ -21,3 +21,12 @@ bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o: ../bingchen/base/Time
 bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o: ../bingchen/base/TimeStamp.h
 bingchen/base/CMakeFiles/bingchen_base.dir/TimeStamp.cc.o: ../bingchen/base/copyable.h
 
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o: ../bingchen/base/TimeStamp.h
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o: ../bingchen/base/copyable.h
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o: ../bingchen/base/logging.cc
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o: ../bingchen/base/logging.h
+bingchen/base/CMakeFiles/bingchen_base.dir/logging.cc.o: ../bingchen/base/logstream.h
+
+bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o: ../bingchen/base/logstream.cc
+bingchen/base/CMakeFiles/bingchen_base.dir/logstream.cc.o: ../bingchen/base/logstream.h
+

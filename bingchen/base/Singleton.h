@@ -18,6 +18,8 @@ public:
     
 
 private:
+    Singleton() {}
+    ~Singleton() {}
     static void init() {
        val_ = new T; 
        ::atexit(destroy);

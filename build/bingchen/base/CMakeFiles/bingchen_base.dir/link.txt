@@ -1,2 +1,2 @@
-/usr/bin/ar cr ../../lib/libbingchen_base.a  CMakeFiles/bingchen_base.dir/Exception.cc.o CMakeFiles/bingchen_base.dir/TimeStamp.cc.o CMakeFiles/bingchen_base.dir/Thread.cc.o CMakeFiles/bingchen_base.dir/ThreadPool.cc.o
+/usr/bin/ar cr ../../lib/libbingchen_base.a  CMakeFiles/bingchen_base.dir/Exception.cc.o CMakeFiles/bingchen_base.dir/TimeStamp.cc.o CMakeFiles/bingchen_base.dir/Thread.cc.o CMakeFiles/bingchen_base.dir/ThreadPool.cc.o CMakeFiles/bingchen_base.dir/logging.cc.o CMakeFiles/bingchen_base.dir/logstream.cc.o
 /usr/bin/ranlib ../../lib/libbingchen_base.a

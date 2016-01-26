@@ -179,17 +179,17 @@ BoundedBlockingQueue_test/fast:
 .PHONY : BoundedBlockingQueue_test/fast
 
 #=============================================================================
-# Target rules for targets named Singleton_test
+# Target rules for targets named ThreadLocalSingleton_test
 
 # Build rule for target.
-Singleton_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Singleton_test
-.PHONY : Singleton_test
+ThreadLocalSingleton_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ThreadLocalSingleton_test
+.PHONY : ThreadLocalSingleton_test
 
 # fast build rule for target.
-Singleton_test/fast:
-	$(MAKE) -f bingchen/base/tests/CMakeFiles/Singleton_test.dir/build.make bingchen/base/tests/CMakeFiles/Singleton_test.dir/build
-.PHONY : Singleton_test/fast
+ThreadLocalSingleton_test/fast:
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/build.make bingchen/base/tests/CMakeFiles/ThreadLocalSingleton_test.dir/build
+.PHONY : ThreadLocalSingleton_test/fast
 
 #=============================================================================
 # Target rules for targets named ThreadLocal_test
@@ -230,6 +230,19 @@ Thread_unittest/fast:
 	$(MAKE) -f bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build.make bingchen/base/tests/CMakeFiles/Thread_unittest.dir/build
 .PHONY : Thread_unittest/fast
 
+#=============================================================================
+# Target rules for targets named logging_test
+
+# Build rule for target.
+logging_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 logging_test
+.PHONY : logging_test
+
+# fast build rule for target.
+logging_test/fast:
+	$(MAKE) -f bingchen/base/tests/CMakeFiles/logging_test.dir/build.make bingchen/base/tests/CMakeFiles/logging_test.dir/build
+.PHONY : logging_test/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -245,10 +258,11 @@ help:
 	@echo "... test"
 	@echo "... bingchen_base"
 	@echo "... BoundedBlockingQueue_test"
-	@echo "... Singleton_test"
+	@echo "... ThreadLocalSingleton_test"
 	@echo "... ThreadLocal_test"
 	@echo "... ThreadPool_test"
 	@echo "... Thread_unittest"
+	@echo "... logging_test"
 .PHONY : help
 
 
