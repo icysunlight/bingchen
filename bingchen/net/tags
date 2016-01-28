@@ -1,0 +1,56 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Channel	Channel.cc	/^Channel::Channel(int fd,EventLoop* loop)$/;"	f	class:Channel
+Channel	Channel.h	/^class Channel$/;"	c	namespace:bingchen
+EventCallback	Channel.h	/^    typedef boost::function<void ()> EventCallback;$/;"	t	class:bingchen::Channel
+EventLoop	EventLoop.cc	/^EventLoop::EventLoop()$/;"	f	class:EventLoop
+EventLoop	EventLoop.h	/^class EventLoop$/;"	c	namespace:bingchen
+Poller	Poller.cc	/^Poller::Poller(EventLoop* loop) $/;"	f	class:Poller
+Poller	Poller.h	/^class Poller $/;"	c	namespace:bingchen
+__BINGCHEN_NET_CHANNEL_H_	Channel.h	2;"	d
+__BINGCHEN_NET_EVENTLOOP_H_	EventLoop.h	2;"	d
+__BINGCHEN_NET_POLLER_H_	Poller.h	2;"	d
+activeChannels_	EventLoop.h	/^    std::vector<Channel*> activeChannels_;$/;"	m	class:bingchen::EventLoop
+bingchen	Channel.h	/^namespace bingchen{$/;"	n
+bingchen	EventLoop.h	/^namespace bingchen {$/;"	n
+bingchen	Poller.h	/^namespace bingchen {$/;"	n
+channelMap_	Poller.h	/^    std::map<int,Channel*> channelMap_;$/;"	m	class:bingchen::Poller
+enableReading	Channel.cc	/^void Channel::enableReading() {$/;"	f	class:Channel
+errorCallback_	Channel.h	/^    EventCallback errorCallback_;$/;"	m	class:bingchen::Channel
+events	Channel.h	/^    int events() { return events_;}$/;"	f	class:bingchen::Channel
+events_	Channel.h	/^    int events_;$/;"	m	class:bingchen::Channel
+fd	Channel.h	/^    int fd() const { return fd_;}$/;"	f	class:bingchen::Channel
+fd_	Channel.h	/^    const int fd_;$/;"	m	class:bingchen::Channel
+fillChannels	Poller.cc	/^void Poller::fillChannels(int cntEvents,std::vector<Channel*>& activeChannels) {$/;"	f	class:Poller
+handleEvent	Channel.cc	/^void Channel::handleEvent() {$/;"	f	class:Channel
+index	Channel.h	/^    int index() { return index_;}$/;"	f	class:bingchen::Channel
+index_	Channel.h	/^    int index_;$/;"	m	class:bingchen::Channel
+isInLoopThread	EventLoop.cc	/^bool EventLoop::isInLoopThread() {$/;"	f	class:EventLoop
+loop	EventLoop.cc	/^void EventLoop::loop() {$/;"	f	class:EventLoop
+loop_	Channel.h	/^    EventLoop* loop_;$/;"	m	class:bingchen::Channel
+loop_	Poller.h	/^    EventLoop* loop_;$/;"	m	class:bingchen::Poller
+main	tests/test1.cc	/^int main() {$/;"	f
+poll	Poller.cc	/^void Poller::poll(int timeout,std::vector<Channel*>& activeChannels) {$/;"	f	class:Poller
+poller_	EventLoop.h	/^    boost::scoped_ptr<Poller> poller_;$/;"	m	class:bingchen::EventLoop
+pollfds_	Poller.h	/^    std::vector<struct pollfd> pollfds_;$/;"	m	class:bingchen::Poller
+quit	EventLoop.cc	/^void EventLoop::quit() {$/;"	f	class:EventLoop
+quit_	EventLoop.h	/^    bool quit_;$/;"	m	class:bingchen::EventLoop
+readCallback_	Channel.h	/^    EventCallback readCallback_;$/;"	m	class:bingchen::Channel
+revents_	Channel.h	/^    int revents_;$/;"	m	class:bingchen::Channel
+running_	EventLoop.h	/^    bool running_;$/;"	m	class:bingchen::EventLoop
+setErrorCallback	Channel.h	/^    void setErrorCallback(const EventCallback& errorCallback) { errorCallback_ = errorCallback;}$/;"	f	class:bingchen::Channel
+setReadCallback	Channel.h	/^    void setReadCallback(const EventCallback& readCallback) { readCallback_ = readCallback;}$/;"	f	class:bingchen::Channel
+setWriteCallback	Channel.h	/^    void setWriteCallback(const EventCallback& writeCallback) { writeCallback_ = writeCallback;}$/;"	f	class:bingchen::Channel
+set_index	Channel.h	/^    void set_index(int index) { index_ = index; }$/;"	f	class:bingchen::Channel
+set_revents	Channel.h	/^    void set_revents(int revents) { revents_ = revents;}$/;"	f	class:bingchen::Channel
+threadId_	EventLoop.h	/^    pid_t threadId_;$/;"	m	class:bingchen::EventLoop
+timeout	tests/test1.cc	/^void timeout() {$/;"	f
+update	Channel.cc	/^void Channel::update() { $/;"	f	class:Channel
+updateChannel	EventLoop.cc	/^void EventLoop::updateChannel(Channel* channel) {$/;"	f	class:EventLoop
+updateChannel	Poller.cc	/^void Poller::updateChannel(Channel* channel) {$/;"	f	class:Poller
+writeCallback_	Channel.h	/^    EventCallback writeCallback_;$/;"	m	class:bingchen::Channel
+~EventLoop	EventLoop.cc	/^EventLoop::~EventLoop() {$/;"	f	class:EventLoop

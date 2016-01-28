@@ -30,11 +30,11 @@ INFO	logging.h	/^        INFO,$/;"	e	enum:bingchen::logger::loglevel
 Instance	Singleton.h	/^    static T& Instance() {$/;"	f	class:bingchen::Singleton
 Instance	ThreadLocalSingleton.h	/^    static T& Instance() {$/;"	f	class:bingchen::ThreadLocalSingleton
 LEVEL_NUM	logging.h	/^        LEVEL_NUM$/;"	e	enum:bingchen::logger::loglevel
-LOG_ERROR	logging.h	65;"	d
-LOG_FATAL	logging.h	66;"	d
-LOG_INFO	logging.h	59;"	d
-LOG_TRACE	logging.h	56;"	d
-LOG_WARN	logging.h	62;"	d
+LOG_ERROR	logging.h	60;"	d
+LOG_FATAL	logging.h	61;"	d
+LOG_INFO	logging.h	56;"	d
+LOG_TRACE	logging.h	54;"	d
+LOG_WARN	logging.h	58;"	d
 MutexLock	MutexLock.h	/^    MutexLock() {$/;"	f	class:bingchen::MutexLock
 MutexLock	MutexLock.h	/^class MutexLock : public boost::noncopyable$/;"	c	namespace:bingchen
 MutexLockGuard	MutexLock.h	/^    MutexLockGuard(MutexLock& mutexlock) $/;"	f	class:bingchen::MutexLockGuard
@@ -159,7 +159,6 @@ getAndSet	atomic.h	/^    T getAndSet(T x) {$/;"	f	class:bingchen::base::atomicIn
 getBackTrace	Exception.cc	/^const char* exception::getBackTrace() const throw() {$/;"	f	class:exception
 getBaseName	logging.cc	/^const char* logger::getBaseName(const char* filename) {$/;"	f	class:logger
 getCount	CountDownLatch.h	/^    int getCount() const {$/;"	f	class:bingchen::CountDownLatch
-getLoglevel	logging.h	/^inline logger::loglevel getLoglevel() { return g_loglevel;}$/;"	f	namespace:bingchen
 getName	tests/ThreadLocalSingleton_test.cc	/^    std::string getName() {return name_;}$/;"	f	class:Test
 getName	tests/ThreadLocal_test.cc	/^    std::string getName() {$/;"	f	class:Test
 getPthreadMutex	MutexLock.h	/^    pthread_mutex_t* getPthreadMutex() {$/;"	f	class:bingchen::MutexLock

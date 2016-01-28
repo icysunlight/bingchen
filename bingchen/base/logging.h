@@ -50,20 +50,15 @@ private:
     flushFunc flushFunc_;
 };
 
-extern logger::loglevel g_loglevel;
-inline logger::loglevel getLoglevel() { return g_loglevel;}
 
-#define LOG_TRACE (if(logger::getLoglevel() <= logger::TRACE) \
-        logger(logger::TRACE,__FILE__,__func__,__LINE__).stream())
+#define LOG_TRACE logger(bingchen::logger::TRACE,__FILE__,__func__,__LINE__).stream()
 
-#define LOG_INFO (if(logger::getLoglevel() <= logger::INFO) \
-        logger(logger::INFO,__FILE__,__func__,__LINE__).stream())
+#define LOG_INFO logger(bingchen::logger::INFO,__FILE__,__func__,__LINE__).stream()
 
-#define LOG_WARN (if(logger::getLoglevel() <= logger::WARN) \
-        logger(logger::WARN,__FILE__,__func__,__LINE__).stream())
+#define LOG_WARN logger(bingchen::logger::WARN,__FILE__,__func__,__LINE__).stream())
 
 #define LOG_ERROR logger(bingchen::logger::ERROR,__FILE__,__func__,__LINE__).stream()
-#define LOG_FATAL logger(logger::FATAL,__FILE__,__func__,__LINE__).stream()
+#define LOG_FATAL logger(bingchen::logger::FATAL,__FILE__,__func__,__LINE__).stream()
 
 
 };

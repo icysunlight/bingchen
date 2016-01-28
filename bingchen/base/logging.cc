@@ -39,19 +39,28 @@ logger::logger(loglevel level,const char* filename,const char* func,const int li
       func_(func),
       line_(line),
       outputFunc_(defaultOutputFunc),
-      flushFunc_(defaultFflush)
+      flushFunc_(defaultFflush),
+      abort_(level == logger::FATAL)
     {
-        stream_  << TimeStamp::now().toFormattedString(true) << " " 
-                 << levelName[level_] << " "
-                 << filename_ << " " 
-                 << func_ << " "
-                 << line_ << " ";
+        if (g_loglevel <= level_)
+        {
+            stream_  << TimeStamp::now().toFormattedString(true) << " " 
+                << levelName[level_] << " "
+                << filename_ << " " 
+                << func_ << " "
+                << line_ << " ";
+        }
     }
 
 logger::~logger() {
-    stream_.finish();
-    outputFunc_(stream_.data(),stream_.lenth());
-    flushFunc_(); 
+    if (g_loglevel <= level_)
+    {
+        stream_.finish();
+        outputFunc_(stream_.data(),stream_.lenth());
+        flushFunc_(); 
+        if (abort_)
+            abort();
+    }
 }
 
 const char* logger::getBaseName(const char* filename) {
