@@ -26,7 +26,7 @@ set(CXX_FLAGS
     -Wwrite-strings
     -march=native
     # -MMD
-    # -std=c++0x
+    -std=c++0x
     -rdynamic
     )
 if(CMAKE_BUILD_BITS EQUAL 32)
@@ -89,12 +89,13 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(bingchen/base)
+include_directories(bingchen/net)
 
 string(TOUPPER ${CMAKE_BUILD_TYPE} BUILD_TYPE)
 message(STATUS "CXX_FLAGS = " ${CMAKE_CXX_FLAGS} " " ${CMAKE_CXX_FLAGS_${BUILD_TYPE}})
 
 add_subdirectory(bingchen/base)
-#add_subdirectory(muduo/net)
+add_subdirectory(bingchen/net)
 
 #if(NOT CMAKE_BUILD_NO_EXAMPLES)
 #    add_subdirectory(examples)

@@ -2,6 +2,7 @@ set(net_SRCS
     Channel.cc
     EventLoop.cc
     Poller.cc
+    TimerQueue.cc
   )
 
 add_library(bingchen_net ${net_SRCS})
