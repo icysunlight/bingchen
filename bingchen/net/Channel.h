@@ -27,6 +27,7 @@ public:
     void handleEvent();
     
     void enableReading();
+    void disableReading();
 
     void set_index(int index) { index_ = index; }
     int index() { return index_;}

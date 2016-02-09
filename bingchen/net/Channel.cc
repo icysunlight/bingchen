@@ -41,3 +41,7 @@ void Channel::enableReading() {
     events_ |= POLLIN;
     update();
 }
+void Channel::disableReading() {
+    events_ &= ~POLLIN;
+    update();
+}

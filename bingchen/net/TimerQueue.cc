@@ -1,5 +1,6 @@
 #include "TimerQueue.h"
 #include "TimerId.h"
+#include "EventLoop.h"
 #include "../base/logging.h"
 #include <sys/timerfd.h>
 #include <boost/bind.hpp>
@@ -44,15 +45,14 @@ TimerQueue::TimerQueue(EventLoop* loop)
 }
 
 TimerId TimerQueue::addTimer(TimeStamp expiration,double interval,boost::function<void ()> cb) {
-    if (expiration < TimeStamp::now()) {
-        return TimerId(NULL);
-    }
-
     Timer* timer = new Timer(expiration,interval,cb);
-    activeTimers_.insert(std::make_pair(expiration,timer));
-
-    reset();
+    loop_->runInLoop(boost::bind(&TimerQueue::addTimerInThread,this,timer));
     return TimerId(timer);
+}
+
+void TimerQueue::addTimerInThread(Timer* timer) {
+    activeTimers_.insert(std::make_pair(timer->expiration(),timer));
+    reset();
 }
 
 void TimerQueue::reset() {

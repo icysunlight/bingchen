@@ -1,17 +1,11 @@
-#ifndef __BINGCHEN_SOCKET_H_
-#define __BINGCHEN_SOCKET_H_
-
-
-
+#include "InetAddr.h"
 namespace bingchen {
 
-class InetAddr;
-class noncopyable;
-
-class Socket {
+class Socket{
 public:
     Socket();
     Socket(int fd);
+    ~Socket();
 
     void setNodelay(bool on);
     void setAddrReuse(bool on);
@@ -25,10 +19,12 @@ public:
     InetAddr getAddr();
 
     int fd() const {return fd_;}
+
+    void close();
+    void shutDownWrite();
 private:
     const int fd_;
 
 };
-};
 
-#endif
+};

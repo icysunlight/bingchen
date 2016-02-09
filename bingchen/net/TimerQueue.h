@@ -17,6 +17,8 @@ public:
     TimerQueue(EventLoop* loop);
 
     TimerId addTimer(TimeStamp expiration,double internval,boost::function<void ()> cb);
+    void addTimerInThread(Timer* timer); 
+
     void cancelTimer(TimerId id);
     void reset();
     void handleRead();

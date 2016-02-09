@@ -1,5 +1,4 @@
 #include "Socket.h"
-#include "InetAddr.h"
 
 #include <unistd.h>
 #include <fcntl.h>
@@ -37,6 +36,9 @@ Socket::Socket(int fd)
    setNonBlockAndCloseOnExec(fd_); 
 }
 
+Socket::~Socket() {
+    close();
+}
 
 void Socket::setNodelay(bool on) {
     int optval = on ? 1 : 0;
@@ -83,4 +85,12 @@ InetAddr Socket::getAddr() {
     socklen_t addrlen = static_cast<socklen_t>(sizeof(addr));
     getsockname(fd_,(struct sockaddr*)&addr,&addrlen);
     return InetAddr(addr); 
+}
+
+void Socket::close() {
+    ::close(fd_);
+}
+
+void Socket::shutDownWrite() {
+    ::shutdown(fd_,SHUT_WR);
 }
