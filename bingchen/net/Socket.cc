@@ -37,7 +37,6 @@ Socket::Socket(int fd)
 }
 
 Socket::~Socket() {
-    close();
 }
 
 void Socket::setNodelay(bool on) {

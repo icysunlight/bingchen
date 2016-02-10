@@ -4,10 +4,7 @@
 
 #include <boost/bind.hpp>
 
-
 using namespace bingchen;
-
-
 
 Acceptor::Acceptor(EventLoop* loop,InetAddr addr) 
     : loop_(loop),
@@ -15,6 +12,7 @@ Acceptor::Acceptor(EventLoop* loop,InetAddr addr)
       acceptChannel_(acceptSock_.fd(),loop),
       listening_(false)
 {
+    acceptSock_.setAddrReuse(true);
     acceptSock_.bindAddr(addr);
     acceptSock_.setAddrReuse(true);
     acceptChannel_.setReadCallback(boost::bind(&Acceptor::handleRead,this));
@@ -36,5 +34,6 @@ void Acceptor::handleRead() {
 
     if (peerSock.fd() != -1 && newConnectionCb_) {
         newConnectionCb_(peerSock);
+        LOG_TRACE << "new connection from " << peerSock.getAddr().addrString();
     }
 }

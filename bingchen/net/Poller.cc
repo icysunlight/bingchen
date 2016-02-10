@@ -14,7 +14,7 @@ Poller::Poller(EventLoop* loop)
 void Poller::poll(int timeout,std::vector<Channel*>& activeChannels) {
     int cntEvents = ::poll(&*pollfds_.begin(),pollfds_.size(),timeout);
     if (cntEvents > 0) {
-        LOG_TRACE << "some events happens";
+        LOG_TRACE << cntEvents << " events happens";
         fillChannels(cntEvents,activeChannels);
     }
     if (cntEvents == 0) {
@@ -25,14 +25,16 @@ void Poller::poll(int timeout,std::vector<Channel*>& activeChannels) {
     }
 }
 void Poller::fillChannels(int cntEvents,std::vector<Channel*>& activeChannels) {
-   for (int i = 0 ; i < pollfds_.size() && cntEvents ; ++i) {
-       if (pollfds_[i].revents != 0) {
-           cntEvents--;
-           Channel* channel = channelMap_[pollfds_[i].fd];
-           channel->set_revents(pollfds_[i].revents);
-           activeChannels.push_back(channel);
-       }
-   } 
+    activeChannels.clear();
+    for (int i = 0 ; i < pollfds_.size() && cntEvents ; ++i) {
+        if (pollfds_[i].revents != 0) {
+            cntEvents--;
+            Channel* channel = channelMap_[pollfds_[i].fd];
+            channel->set_revents(pollfds_[i].revents);
+            activeChannels.push_back(channel);
+            LOG_TRACE << "new event happens at fd " << channel->fd();
+        }
+    } 
 }
 
 void Poller::updateChannel(Channel* channel) {
@@ -44,6 +46,7 @@ void Poller::updateChannel(Channel* channel) {
         pollfds_.push_back(pfd);
         channelMap_[channel->fd()] = channel;
         channel->set_index(pollfds_.size() - 1);
+        LOG_TRACE << "new channel added, fd: " << channel->fd();
     }
     else {
         pollfds_[channel->index()].events = channel->events();
