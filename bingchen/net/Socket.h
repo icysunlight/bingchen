@@ -1,3 +1,6 @@
+#ifndef __BINGCHEN_NET_SOCKET_H_
+#define __BINGCHEN_NET_SOCKET_H_
+
 #include "InetAddr.h"
 namespace bingchen {
 
@@ -28,3 +31,5 @@ private:
 };
 
 };
+
+#endif

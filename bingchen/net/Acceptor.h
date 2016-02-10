@@ -19,6 +19,8 @@ public:
 
     Acceptor(EventLoop* loop,InetAddr addr);
 
+    InetAddr getAddr() { return acceptSock_.getAddr(); }
+
     bool listen();
     void handleRead();
     void setNewConnectionCb(const newConnectionCb_t& cb) { newConnectionCb_ = cb; }
