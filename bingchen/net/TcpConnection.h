@@ -18,14 +18,17 @@ class TcpConnection
       public boost::enable_shared_from_this<TcpConnection>
 {
 public:
-    TcpConnection(EventLoop* loop,std::string name,Socket connSock,InetAddr localAddr,InetAddr peerAddr);
+    TcpConnection(EventLoop* loop,std::string name,int peerfd,InetAddr localAddr);
     ~TcpConnection();
     void establish();
 
-    void setMessageCb(MessageCb_t cb) {messageCb_ = cb;}
-    void setConnectionCb(ConnectionCb_t cb) { connCb_ = cb;}
+    void setMessageCb(const MessageCb_t& cb) {messageCb_ = cb;}
+    void setConnectionCb(const ConnectionCb_t& cb) { connCb_ = cb;}
+    void setCloseCb(const ConnectionCb_t& cb) { closeCb_ = cb; }
 
     void handleRead();
+    void handleClose();
+    void unregistConn();
 
     InetAddr getLocalAddr() { return localAddr_; }
     InetAddr getPeerAddr() { return peerAddr_; }
@@ -37,6 +40,7 @@ private:
     Socket connSock_;
     Channel connChannel_;
     ConnectionCb_t connCb_;
+    ConnectionCb_t closeCb_;
     MessageCb_t messageCb_;
     InetAddr localAddr_;
     InetAddr peerAddr_;

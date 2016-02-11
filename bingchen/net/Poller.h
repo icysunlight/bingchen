@@ -20,6 +20,7 @@ public:
     void poll(int timeout,std::vector<Channel*>& activeChannels);
     void fillChannels(int cntEvents,std::vector<Channel*>& activeChannels);
     void updateChannel(Channel* channel);
+    void removeChannel(Channel* channel);
 
 private:
     std::vector<struct pollfd> pollfds_;

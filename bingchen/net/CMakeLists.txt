@@ -3,6 +3,12 @@ set(net_SRCS
     EventLoop.cc
     Poller.cc
     TimerQueue.cc
+    Acceptor.cc
+    InetAddr.cc
+    Socket.cc
+    TcpConnection.cc
+    TcpServer.cc
+    EventLoopThread.cc
   )
 
 add_library(bingchen_net ${net_SRCS})

@@ -22,7 +22,8 @@ public:
     TcpServer(EventLoop* loop,InetAddr addr);
 
     void start();
-    void OnConnection(Socket sock);
+    void OnConnection(int peerfd);
+    void removeConnection(const ConnectionPtr& conn);
 
     void setMessageCb(const MessageCb_t& cb) { messageCb_ = cb; }
     void setConnectionCb(const ConnectionCb_t& cb) { connCb_ = cb; }

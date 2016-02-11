@@ -22,9 +22,9 @@ void TcpServer::start() {
     loop_->loop();
 }
 
-void TcpServer::OnConnection(Socket sock) {
+void TcpServer::OnConnection(int fd) {
     //FIXME:unnormal use of accept result
-    if (sock.fd() == -1)
+    if (fd == -1)
         return;
 
     char buf[32];
@@ -32,12 +32,19 @@ void TcpServer::OnConnection(Socket sock) {
     std::string name = buf;
     
     {
-        ConnectionPtr conn(new TcpConnection(loop_,name,sock,localAddr_,sock.getAddr()));
+        ConnectionPtr conn(new TcpConnection(loop_,name,fd,localAddr_));
         connList_[name] = conn->shared_from_this();
         conn->setMessageCb(messageCb_);
         conn->setConnectionCb(connCb_);
+        conn->setCloseCb(boost::bind(&TcpServer::removeConnection,this,_1));
         conn->establish();
 
         LOG_TRACE << "new conn bind to " << connList_[name]->getPeerAddr().addrString();
     }
+}
+    
+
+void TcpServer::removeConnection(const ConnectionPtr& conn) {
+    connList_.erase(conn->getName());
+    LOG_TRACE << "remove connection, name: " << conn->getName();
 }

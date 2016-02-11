@@ -30,10 +30,10 @@ bool Acceptor::listen() {
 }
 
 void Acceptor::handleRead() {
-    Socket peerSock = acceptSock_.accept();
+    int peerfd = acceptSock_.accept();
 
-    if (peerSock.fd() != -1 && newConnectionCb_) {
-        newConnectionCb_(peerSock);
-        LOG_TRACE << "new connection from " << peerSock.getAddr().addrString();
+    if (peerfd) {
+        newConnectionCb_(peerfd);
+        //LOG_TRACE << "new connection from " << peerSock.getAddr().addrString();
     }
 }

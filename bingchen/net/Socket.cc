@@ -70,12 +70,11 @@ void Socket::listen() {
     ::listen(fd_,SOMAXCONN);
 }
     
-Socket Socket::accept() {
+int Socket::accept() {
     struct sockaddr addr;
     int socklen = sizeof(addr);
     int peerfd = ::accept(fd_,&addr,(socklen_t*)&socklen);
-    Socket peersocket(peerfd);
-    return peersocket;
+    return peerfd;
 }
 
 InetAddr Socket::getAddr() {

@@ -3,3 +3,6 @@ target_link_libraries(test1 bingchen_net)
 
 add_executable(TimerQueue_test TimerQueue_test.cc)
 target_link_libraries(TimerQueue_test bingchen_net)
+
+add_executable(EstablishConn_test EstablishConn_test.cc)
+target_link_libraries(EstablishConn_test bingchen_net)

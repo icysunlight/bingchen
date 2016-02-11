@@ -3,6 +3,7 @@
 
 #include <boost/noncopyable.hpp>
 #include <boost/function.hpp>
+#include <boost/weak_ptr.hpp>
 
 namespace bingchen{
 
@@ -15,6 +16,7 @@ public:
     typedef boost::function<void ()> EventCallback;
 
     Channel(int fd,EventLoop* loop_);
+    ~Channel();
 
     void setReadCallback(const EventCallback& readCallback) { readCallback_ = readCallback;}
     void setWriteCallback(const EventCallback& writeCallback) { writeCallback_ = writeCallback;}
@@ -24,15 +26,22 @@ public:
     int events() { return events_;}
     int fd() const { return fd_;}
     void update();
+    void remove();
     void handleEvent();
     
     void enableReading();
     void disableReading();
+    void disableAll();
 
     void set_index(int index) { index_ = index; }
     int index() { return index_;}
 
+    void tie(const boost::shared_ptr<void>& obj);
+
 private:
+
+    void handleEventWithGuard();
+
     const int fd_;
     EventLoop* loop_;
     int events_;
@@ -43,7 +52,10 @@ private:
     EventCallback writeCallback_;
     EventCallback errorCallback_;
 
+    bool tied_;
+    boost::weak_ptr<void> tie_;
 
+    bool handlingEvents_;
 
 };
 

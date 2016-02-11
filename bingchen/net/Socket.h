@@ -17,7 +17,7 @@ public:
 
     void bindAddr(const InetAddr& addr);
     void listen();
-    Socket accept();
+    int accept();
 
     InetAddr getAddr();
 

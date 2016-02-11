@@ -15,7 +15,7 @@ class Acceptor
     : boost::noncopyable
 {
 public:
-    typedef boost::function<void (Socket)> newConnectionCb_t;
+    typedef boost::function<void (int)> newConnectionCb_t;
 
     Acceptor(EventLoop* loop,InetAddr addr);
 

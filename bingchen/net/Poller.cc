@@ -52,3 +52,16 @@ void Poller::updateChannel(Channel* channel) {
         pollfds_[channel->index()].events = channel->events();
     }
 }
+
+void Poller::removeChannel(Channel* channel) {
+    if (channel->index() == -1) {
+        return;
+    }
+    else {
+        int removeIndex = channel->index();
+        int endIndex = pollfds_.size() - 1;
+        std::swap(pollfds_[endIndex],pollfds_[removeIndex]);
+        pollfds_.pop_back();
+        LOG_TRACE << "remove channel, fd:" << channel->fd();
+    }
+}

@@ -29,6 +29,8 @@ public:
     void loop();
     bool isInLoopThread();
     void updateChannel(Channel*);
+    void removeChannel(Channel*);
+
     void quit();
     static void getThreadEventLoop();
 
