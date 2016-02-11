@@ -2,6 +2,7 @@
 #include "TcpServer.h"
 #include "TcpConnection.h"
 #include "InetAddr.h"
+#include "Buffer.h"
 
 #include <cstdio>
 #include <boost/bind.hpp>
@@ -12,8 +13,8 @@ void OnConn(const ConnectionPtr& conn) {
     printf("new conn from %s\n",conn->getPeerAddr().addrString().c_str());
 }
 
-void OnMessage(const ConnectionPtr& conn,void* buf,int len) {
-    printf("read msg from %s\n",buf);
+void OnMessage(const ConnectionPtr& conn,Buffer* buf) {
+    printf("read msg from %s\n",buf->retrieveAsString().c_str());
 }
 
 
@@ -24,8 +25,6 @@ int main() {
     server.setMessageCb(OnMessage);
     server.setConnectionCb(OnConn);
     server.start();
-
-
 
 
     return 0;

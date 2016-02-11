@@ -33,7 +33,7 @@ void TcpConnection::establish() {
 void TcpConnection::handleRead() {
     char buf[65536];
     memset(buf,0,sizeof(buf));
-    int ret = ::read(connSock_.fd(),buf,65536);
+    int ret = inBuf_.readFd(connSock_.fd());
     if (0 == ret) {
         handleClose();
     }
@@ -42,7 +42,7 @@ void TcpConnection::handleRead() {
         return;
     }
     else if (ret != 0)
-        messageCb_(shared_from_this(),buf,ret);
+        messageCb_(shared_from_this(),&inBuf_);
 
 }
 

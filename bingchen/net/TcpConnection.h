@@ -5,6 +5,7 @@
 #include "NetTypes.h"
 #include "InetAddr.h"
 #include "Socket.h"
+#include "Buffer.h"
 #include <string>
 
 #include <boost/enable_shared_from_this.hpp>
@@ -44,6 +45,8 @@ private:
     MessageCb_t messageCb_;
     InetAddr localAddr_;
     InetAddr peerAddr_;
+
+    Buffer inBuf_;
 
     std::string name_;
 };

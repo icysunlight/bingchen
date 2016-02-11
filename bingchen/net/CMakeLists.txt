@@ -9,6 +9,7 @@ set(net_SRCS
     TcpConnection.cc
     TcpServer.cc
     EventLoopThread.cc
+    Buffer.cc
   )
 
 add_library(bingchen_net ${net_SRCS})

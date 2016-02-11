@@ -7,11 +7,12 @@
 namespace bingchen {
 
 class TcpConnection;
+class Buffer;
 
 typedef boost::shared_ptr<TcpConnection> ConnectionPtr;
 
 typedef boost::function<void (const ConnectionPtr&)> ConnectionCb_t;
-typedef boost::function<void (const ConnectionPtr&,void*,int)> MessageCb_t;
+typedef boost::function<void (const ConnectionPtr&,Buffer*)> MessageCb_t;
 
 
 
