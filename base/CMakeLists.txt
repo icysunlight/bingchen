@@ -1,2 +1,0 @@
-SET(LIBBASE_SRC TimeStamp.cpp)
-ADD_LIBRARY(TimeStamp STATIC ${LIBBASE_SRC})
