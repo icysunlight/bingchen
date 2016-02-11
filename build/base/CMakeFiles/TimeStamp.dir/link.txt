@@ -1,2 +1,0 @@
-/usr/bin/ar cr /lib/libTimeStamp.a  CMakeFiles/TimeStamp.dir/TimeStamp.cpp.o
-/usr/bin/ranlib /lib/libTimeStamp.a
