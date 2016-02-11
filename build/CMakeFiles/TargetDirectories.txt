@@ -3,5 +3,8 @@
 /root/code/bingchen/build/bingchen/base/tests/CMakeFiles/ThreadLocal_test.dir
 /root/code/bingchen/build/bingchen/base/tests/CMakeFiles/ThreadPool_test.dir
 /root/code/bingchen/build/bingchen/base/tests/CMakeFiles/Thread_unittest.dir
+/root/code/bingchen/build/bingchen/net/tests/CMakeFiles/TimerQueue_test.dir
 /root/code/bingchen/build/bingchen/base/CMakeFiles/bingchen_base.dir
+/root/code/bingchen/build/bingchen/net/CMakeFiles/bingchen_net.dir
 /root/code/bingchen/build/bingchen/base/tests/CMakeFiles/logging_test.dir
+/root/code/bingchen/build/bingchen/net/tests/CMakeFiles/test1.dir

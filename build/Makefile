@@ -243,6 +243,45 @@ logging_test/fast:
 	$(MAKE) -f bingchen/base/tests/CMakeFiles/logging_test.dir/build.make bingchen/base/tests/CMakeFiles/logging_test.dir/build
 .PHONY : logging_test/fast
 
+#=============================================================================
+# Target rules for targets named bingchen_net
+
+# Build rule for target.
+bingchen_net: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bingchen_net
+.PHONY : bingchen_net
+
+# fast build rule for target.
+bingchen_net/fast:
+	$(MAKE) -f bingchen/net/CMakeFiles/bingchen_net.dir/build.make bingchen/net/CMakeFiles/bingchen_net.dir/build
+.PHONY : bingchen_net/fast
+
+#=============================================================================
+# Target rules for targets named TimerQueue_test
+
+# Build rule for target.
+TimerQueue_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TimerQueue_test
+.PHONY : TimerQueue_test
+
+# fast build rule for target.
+TimerQueue_test/fast:
+	$(MAKE) -f bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/build.make bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/build
+.PHONY : TimerQueue_test/fast
+
+#=============================================================================
+# Target rules for targets named test1
+
+# Build rule for target.
+test1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test1
+.PHONY : test1
+
+# fast build rule for target.
+test1/fast:
+	$(MAKE) -f bingchen/net/tests/CMakeFiles/test1.dir/build.make bingchen/net/tests/CMakeFiles/test1.dir/build
+.PHONY : test1/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -263,6 +302,9 @@ help:
 	@echo "... ThreadPool_test"
 	@echo "... Thread_unittest"
 	@echo "... logging_test"
+	@echo "... bingchen_net"
+	@echo "... TimerQueue_test"
+	@echo "... test1"
 .PHONY : help
 
 

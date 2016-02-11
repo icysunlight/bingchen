@@ -6,37 +6,3 @@
 
 #IncludeRegexTransform: 
 
-../bingchen/base/TimeStamp.h
-string
--
-sys/time.h
--
-copyable.h
-../bingchen/base/copyable.h
-boost/operators.hpp
--
-
-../bingchen/base/copyable.h
-
-../bingchen/base/logging.h
-boost/noncopyable.hpp
--
-TimeStamp.h
-../bingchen/base/TimeStamp.h
-logstream.h
-../bingchen/base/logstream.h
-
-../bingchen/base/logstream.h
-boost/noncopyable.hpp
--
-cstring
--
-string
--
-cstdio
--
-
-/root/code/bingchen/bingchen/base/tests/logging_test.cc
-logging.h
-/root/code/bingchen/bingchen/base/tests/logging.h
-

@@ -10,6 +10,8 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "../CMakeLists.txt"
   "../bingchen/base/CMakeLists.txt"
   "../bingchen/base/tests/CMakeLists.txt"
+  "../bingchen/net/CMakeLists.txt"
+  "../bingchen/net/tests/CMakeLists.txt"
   "CMakeFiles/2.8.12.2/CMakeCCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeSystem.cmake"
@@ -54,6 +56,8 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "bingchen/base/CMakeFiles/CMakeDirectoryInformation.cmake"
   "bingchen/base/tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "bingchen/net/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "bingchen/net/tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -65,4 +69,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "bingchen/base/tests/CMakeFiles/ThreadPool_test.dir/DependInfo.cmake"
   "bingchen/base/tests/CMakeFiles/Thread_unittest.dir/DependInfo.cmake"
   "bingchen/base/tests/CMakeFiles/logging_test.dir/DependInfo.cmake"
+  "bingchen/net/CMakeFiles/bingchen_net.dir/DependInfo.cmake"
+  "bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/DependInfo.cmake"
+  "bingchen/net/tests/CMakeFiles/test1.dir/DependInfo.cmake"
   )

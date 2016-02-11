@@ -79,7 +79,7 @@ bingchen/base/preinstall: bingchen/base/tests/preinstall
 bingchen/base/CMakeFiles/bingchen_base.dir/all:
 	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/depend
 	$(MAKE) -f bingchen/base/CMakeFiles/bingchen_base.dir/build.make bingchen/base/CMakeFiles/bingchen_base.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  6 7 8 9 10 11
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  7 8 9 10 11 12
 	@echo "Built target bingchen_base"
 .PHONY : bingchen/base/CMakeFiles/bingchen_base.dir/all
 
@@ -314,7 +314,7 @@ clean: bingchen/base/tests/CMakeFiles/Thread_unittest.dir/clean
 bingchen/base/tests/CMakeFiles/logging_test.dir/all: bingchen/base/CMakeFiles/bingchen_base.dir/all
 	$(MAKE) -f bingchen/base/tests/CMakeFiles/logging_test.dir/build.make bingchen/base/tests/CMakeFiles/logging_test.dir/depend
 	$(MAKE) -f bingchen/base/tests/CMakeFiles/logging_test.dir/build.make bingchen/base/tests/CMakeFiles/logging_test.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  12
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  17
 	@echo "Built target logging_test"
 .PHONY : bingchen/base/tests/CMakeFiles/logging_test.dir/all
 
@@ -340,6 +340,147 @@ bingchen/base/tests/CMakeFiles/logging_test.dir/clean:
 
 # clean rule for target.
 clean: bingchen/base/tests/CMakeFiles/logging_test.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory bingchen/net
+
+# Convenience name for "all" pass in the directory.
+bingchen/net/all: bingchen/net/CMakeFiles/bingchen_net.dir/all
+bingchen/net/all: bingchen/net/tests/all
+.PHONY : bingchen/net/all
+
+# Convenience name for "clean" pass in the directory.
+bingchen/net/clean: bingchen/net/CMakeFiles/bingchen_net.dir/clean
+bingchen/net/clean: bingchen/net/tests/clean
+.PHONY : bingchen/net/clean
+
+# Convenience name for "preinstall" pass in the directory.
+bingchen/net/preinstall: bingchen/net/tests/preinstall
+.PHONY : bingchen/net/preinstall
+
+#=============================================================================
+# Target rules for target bingchen/net/CMakeFiles/bingchen_net.dir
+
+# All Build rule for target.
+bingchen/net/CMakeFiles/bingchen_net.dir/all: bingchen/base/CMakeFiles/bingchen_base.dir/all
+	$(MAKE) -f bingchen/net/CMakeFiles/bingchen_net.dir/build.make bingchen/net/CMakeFiles/bingchen_net.dir/depend
+	$(MAKE) -f bingchen/net/CMakeFiles/bingchen_net.dir/build.make bingchen/net/CMakeFiles/bingchen_net.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  13 14 15 16
+	@echo "Built target bingchen_net"
+.PHONY : bingchen/net/CMakeFiles/bingchen_net.dir/all
+
+# Include target in all.
+all: bingchen/net/CMakeFiles/bingchen_net.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+bingchen/net/CMakeFiles/bingchen_net.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 10
+	$(MAKE) -f CMakeFiles/Makefile2 bingchen/net/CMakeFiles/bingchen_net.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 0
+.PHONY : bingchen/net/CMakeFiles/bingchen_net.dir/rule
+
+# Convenience name for target.
+bingchen_net: bingchen/net/CMakeFiles/bingchen_net.dir/rule
+.PHONY : bingchen_net
+
+# clean rule for target.
+bingchen/net/CMakeFiles/bingchen_net.dir/clean:
+	$(MAKE) -f bingchen/net/CMakeFiles/bingchen_net.dir/build.make bingchen/net/CMakeFiles/bingchen_net.dir/clean
+.PHONY : bingchen/net/CMakeFiles/bingchen_net.dir/clean
+
+# clean rule for target.
+clean: bingchen/net/CMakeFiles/bingchen_net.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory bingchen/net/tests
+
+# Convenience name for "all" pass in the directory.
+bingchen/net/tests/all: bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/all
+bingchen/net/tests/all: bingchen/net/tests/CMakeFiles/test1.dir/all
+.PHONY : bingchen/net/tests/all
+
+# Convenience name for "clean" pass in the directory.
+bingchen/net/tests/clean: bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/clean
+bingchen/net/tests/clean: bingchen/net/tests/CMakeFiles/test1.dir/clean
+.PHONY : bingchen/net/tests/clean
+
+# Convenience name for "preinstall" pass in the directory.
+bingchen/net/tests/preinstall:
+.PHONY : bingchen/net/tests/preinstall
+
+#=============================================================================
+# Target rules for target bingchen/net/tests/CMakeFiles/TimerQueue_test.dir
+
+# All Build rule for target.
+bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/all: bingchen/base/CMakeFiles/bingchen_base.dir/all
+bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/all: bingchen/net/CMakeFiles/bingchen_net.dir/all
+	$(MAKE) -f bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/build.make bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/depend
+	$(MAKE) -f bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/build.make bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  6
+	@echo "Built target TimerQueue_test"
+.PHONY : bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/all
+
+# Include target in all.
+all: bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 11
+	$(MAKE) -f CMakeFiles/Makefile2 bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 0
+.PHONY : bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/rule
+
+# Convenience name for target.
+TimerQueue_test: bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/rule
+.PHONY : TimerQueue_test
+
+# clean rule for target.
+bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/clean:
+	$(MAKE) -f bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/build.make bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/clean
+.PHONY : bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/clean
+
+# clean rule for target.
+clean: bingchen/net/tests/CMakeFiles/TimerQueue_test.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target bingchen/net/tests/CMakeFiles/test1.dir
+
+# All Build rule for target.
+bingchen/net/tests/CMakeFiles/test1.dir/all: bingchen/base/CMakeFiles/bingchen_base.dir/all
+bingchen/net/tests/CMakeFiles/test1.dir/all: bingchen/net/CMakeFiles/bingchen_net.dir/all
+	$(MAKE) -f bingchen/net/tests/CMakeFiles/test1.dir/build.make bingchen/net/tests/CMakeFiles/test1.dir/depend
+	$(MAKE) -f bingchen/net/tests/CMakeFiles/test1.dir/build.make bingchen/net/tests/CMakeFiles/test1.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/code/bingchen/build/CMakeFiles  18
+	@echo "Built target test1"
+.PHONY : bingchen/net/tests/CMakeFiles/test1.dir/all
+
+# Include target in all.
+all: bingchen/net/tests/CMakeFiles/test1.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+bingchen/net/tests/CMakeFiles/test1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 11
+	$(MAKE) -f CMakeFiles/Makefile2 bingchen/net/tests/CMakeFiles/test1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/bingchen/build/CMakeFiles 0
+.PHONY : bingchen/net/tests/CMakeFiles/test1.dir/rule
+
+# Convenience name for target.
+test1: bingchen/net/tests/CMakeFiles/test1.dir/rule
+.PHONY : test1
+
+# clean rule for target.
+bingchen/net/tests/CMakeFiles/test1.dir/clean:
+	$(MAKE) -f bingchen/net/tests/CMakeFiles/test1.dir/build.make bingchen/net/tests/CMakeFiles/test1.dir/clean
+.PHONY : bingchen/net/tests/CMakeFiles/test1.dir/clean
+
+# clean rule for target.
+clean: bingchen/net/tests/CMakeFiles/test1.dir/clean
 .PHONY : clean
 
 #=============================================================================
