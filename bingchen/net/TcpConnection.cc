@@ -15,9 +15,13 @@ TcpConnection::TcpConnection(EventLoop* loop,std::string name,int fd,InetAddr lo
       connChannel_(fd,loop),
       localAddr_(localAddr),
       peerAddr_(connSock_.getAddr()),
-      name_(name)
+      name_(name),
+      state_(Connecting)
 {
     connChannel_.setReadCallback(boost::bind(&TcpConnection::handleRead,this));
+//    LOG_TRACE << "buf size: " << connSock_.getSndBufSize();
+//    connSock_.setSndBufSize(10);
+//    LOG_TRACE << "buf size: " << connSock_.getSndBufSize();
 }
 
 TcpConnection::~TcpConnection() {
@@ -28,6 +32,7 @@ void TcpConnection::establish() {
         connCb_(shared_from_this());
 
     connChannel_.enableReading();
+    state_ = Connected;
 }
 
 void TcpConnection::handleRead() {
@@ -51,6 +56,23 @@ void TcpConnection::handleClose() {
     loop_->queueInLoop(boost::bind(&TcpConnection::unregistConn,shared_from_this()));
 }
     
+void TcpConnection::handleWrite() {
+    const int twrite = outputBuffer_.readableBytes();
+    int nwrote = ::write(connSock_.fd(),outputBuffer_.begin(),twrite);
+    if (nwrote < 0) {
+        LOG_ERROR << "handleWrite";
+    }
+    else {
+       outputBuffer_.retrieve(nwrote); 
+       if (nwrote == twrite) {
+           connChannel_.disbleWriting();
+           if (state_ == Disconnecting) {
+               shutdownInLoop();
+           }
+       }
+    }
+}
+    
 void TcpConnection::unregistConn() {
     connChannel_.disableAll();
     //在TcpServer中反注册
@@ -59,4 +81,48 @@ void TcpConnection::unregistConn() {
     }
     //在EventLoop中反注册
     connChannel_.remove();
+}
+
+void TcpConnection::send(const std::string& content){
+    if (loop_->isInLoopThread()) {
+        sendInLoop(content);
+    }
+    else {
+        loop_->queueInLoop(boost::bind(&TcpConnection::sendInLoop,this,content));
+    }
+}
+    
+void TcpConnection::sendInLoop(const std::string& content) {
+    int nwrote = 0;
+    if (!connChannel_.isWriting()) {
+        nwrote = ::write(connSock_.fd(),content.c_str(),content.size());
+        LOG_TRACE << nwrote;
+        if (nwrote < 0) {
+           nwrote = 0; 
+        }
+    }
+
+    if (nwrote < content.size()) {
+        outputBuffer_.append(content.c_str() + nwrote,content.size() - nwrote);
+        if (!connChannel_.isWriting()) {
+            connChannel_.enableWriting();
+        }
+    }
+}
+
+void TcpConnection::shutdown() {
+    if (loop_->isInLoopThread()) {
+        shutdownInLoop();
+    }
+    else {
+        loop_->queueInLoop(boost::bind(&TcpConnection::shutdownInLoop,this));
+    }
+}
+    
+void TcpConnection::shutdownInLoop() {
+    state_ = Disconnecting;
+    if (!connChannel_.isWriting()) {
+       connChannel_.disableReading();
+       connSock_.shutDownWrite(); 
+    }
 }

@@ -9,3 +9,6 @@ target_link_libraries(EstablishConn_test bingchen_net)
 
 add_executable(Buffer_test Buffer_test.cc)
 target_link_libraries(Buffer_test bingchen_net)
+
+add_executable(SendMessage_test SendMessage_test.cc)
+target_link_libraries(SendMessage_test bingchen_net)

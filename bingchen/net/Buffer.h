@@ -20,12 +20,12 @@ public:
     void append(const void* data,int len);
 
     int readFd(int fd);
+    void retrieve(int lenth);
 
+    char* begin();
 private:
     
-    char* begin();
 
-    void retrieve(int lenth);
     void hasWriten(int lenth);
 
     void makeSpace(int size);

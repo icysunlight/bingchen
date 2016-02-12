@@ -15,6 +15,9 @@ public:
     void setPortReuse(bool on);
     void setKeepAlive(bool on);
 
+    void setSndBufSize(int size);
+    int getSndBufSize();
+
     void bindAddr(const InetAddr& addr);
     void listen();
     int accept();

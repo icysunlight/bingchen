@@ -31,6 +31,9 @@ public:
     
     void enableReading();
     void disableReading();
+    void enableWriting();
+    void disbleWriting();
+    bool isWriting();
     void disableAll();
 
     void set_index(int index) { index_ = index; }

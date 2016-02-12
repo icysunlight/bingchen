@@ -19,6 +19,8 @@ class TcpConnection
       public boost::enable_shared_from_this<TcpConnection>
 {
 public:
+    enum stateE{Connecting,Connected,Disconnecting,Disconnected};
+
     TcpConnection(EventLoop* loop,std::string name,int peerfd,InetAddr localAddr);
     ~TcpConnection();
     void establish();
@@ -29,12 +31,19 @@ public:
 
     void handleRead();
     void handleClose();
+    void handleWrite();
     void unregistConn();
 
     InetAddr getLocalAddr() { return localAddr_; }
     InetAddr getPeerAddr() { return peerAddr_; }
 
     std::string getName() { return name_; }
+
+    void send(const std::string& content);
+    void sendInLoop(const std::string& content);
+
+    void shutdown();
+    void shutdownInLoop();
 
 private:
     EventLoop* loop_;
@@ -47,6 +56,9 @@ private:
     InetAddr peerAddr_;
 
     Buffer inBuf_;
+    Buffer outputBuffer_;
+
+    stateE state_;
 
     std::string name_;
 };

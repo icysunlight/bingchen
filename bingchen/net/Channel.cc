@@ -73,6 +73,18 @@ void Channel::disableReading() {
     events_ &= ~POLLIN;
     update();
 }
+void Channel::enableWriting() {
+    events_ |= POLLOUT;
+    update();
+}
+void Channel::disbleWriting() {
+    events_ &= ~POLLOUT;
+    update();
+}
+
+bool Channel::isWriting() {
+    return events_ & POLLOUT;
+}
 
 void Channel::disableAll() {
     events_ = 0;

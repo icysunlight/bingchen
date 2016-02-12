@@ -47,6 +47,9 @@ char* Buffer::begin() {
     
 void Buffer::retrieve(int lenth) {
     readIndex_ += lenth;
+    if (readIndex_ == writeIndex_) {
+        readIndex_ = writeIndex_ = kPrependInit;
+    }
 }
 
 void Buffer::hasWriten(int lenth) {

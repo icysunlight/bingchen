@@ -60,6 +60,17 @@ void Socket::setKeepAlive(bool on) {
     ::setsockopt(fd_,SOL_SOCKET,SO_KEEPALIVE,&optval,sizeof(optval));
 }
 
+void Socket::setSndBufSize(int size) {
+    ::setsockopt(fd_,SOL_SOCKET,SO_SNDBUF,&size,sizeof(size));
+}
+    
+int Socket::getSndBufSize() {
+    int size = 0;
+    int len = sizeof(size);
+    ::getsockopt(fd_,SOL_SOCKET,SO_SNDBUF,&size,(unsigned int*)&len);
+    return size;
+}
+
 void Socket::bindAddr(const InetAddr& addr) {
     struct sockaddr_in inaddr = addr.saddr();
 
