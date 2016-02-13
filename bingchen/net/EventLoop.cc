@@ -9,6 +9,7 @@
 #include <boost/bind.hpp>
 
 #include <signal.h>
+#include <errno.h>
 
 class IgnoreSIGPIPE {
 public:
@@ -24,7 +25,7 @@ using namespace bingchen;
 __thread EventLoop* t_eventloop;
 
 int createEventFd() {
-    return eventfd(0,EFD_NONBLOCK | EFD_CLOEXEC);
+    return ::eventfd(0,EFD_NONBLOCK | EFD_CLOEXEC);
 }
 
 EventLoop::EventLoop()
@@ -61,6 +62,12 @@ void EventLoop::loop() {
         {
             activeChannels_[nChannel]->handleEvent(); 
         }
+        /*
+        if (wakeupFd_ == handleRead()) {
+            LOG_TRACE << "thread " << threadId_ << " is waked up"
+                << "at fd: " << wakeupFd_;
+        }
+        */
         doPendingTasks();
     }
 }
@@ -111,20 +118,27 @@ void EventLoop::queueInLoop(const Task& task) {
         pendingTasks_.push_back(task);
     } 
     if (!isInLoopThread() || runningTasks_) {
+        LOG_TRACE << threadId_;
         wakeup();
     }
+    LOG_TRACE << "size: " << (int)pendingTasks_.size()
+              << "at thread: " << threadId_;
 }
 void EventLoop::wakeup() {
-    LOG_TRACE << "wakeup loop " << CurrentThread::tid();
-    int context = 0;
-    ::write(wakeupFd_,&context,sizeof(context));
+    uint64_t context = wakeupFd_;
+    int ret = ::write(wakeupFd_,&context,sizeof(context));
+    if (-1 == ret) {
+        LOG_TRACE << strerror(errno);
+    }
 }
 
 void EventLoop::handleRead() {
-    int context = 0;
+    uint64_t context = 0;
     ::read(wakeupFd_,&context,sizeof(context));
 }
+
 void EventLoop::doPendingTasks() {
+    assert(isInLoopThread());
     std::vector<Task> tasks_;
 
     {

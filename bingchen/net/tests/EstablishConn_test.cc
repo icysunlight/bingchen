@@ -14,7 +14,9 @@ void OnConn(const ConnectionPtr& conn) {
 }
 
 void OnMessage(const ConnectionPtr& conn,Buffer* buf) {
-    printf("read msg from %s\n",buf->retrieveAsString().c_str());
+    std::string str = buf->retrieveAsString();
+    printf("read msg from %s\n",str);
+    conn->send(str);
 }
 
 
@@ -24,6 +26,7 @@ int main() {
     TcpServer server(&loop,InetAddr("192.168.32.128",55));
     server.setMessageCb(OnMessage);
     server.setConnectionCb(OnConn);
+    server.setThreadsNum(3);
     server.start();
 
 

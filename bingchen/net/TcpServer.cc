@@ -12,12 +12,17 @@ TcpServer::TcpServer(EventLoop* loop,InetAddr addr)
     : loop_(loop),
       acceptor_(new Acceptor(loop,addr)),
       localAddr_(acceptor_->getAddr()),
-      connIndex_(0)
+      connIndex_(0),
+      threadPool_(new EventLoopThreadPool(loop)),
+      started_(false)
 {
     acceptor_->setNewConnectionCb(boost::bind(&TcpServer::OnConnection,this,_1));
 }
 
 void TcpServer::start() {
+    assert(!started_);
+    started_ = true;
+    threadPool_->start(ioLoopInitCb_);
     acceptor_->listen();
     loop_->loop();
 }
@@ -32,21 +37,33 @@ void TcpServer::OnConnection(int fd) {
     std::string name = buf;
     
     {
-        ConnectionPtr conn(new TcpConnection(loop_,name,fd,localAddr_));
+        EventLoop* ioLoop = threadPool_->getNext();
+
+        ConnectionPtr conn(new TcpConnection(ioLoop,name,fd,localAddr_));
         connList_[name] = conn->shared_from_this();
+
         conn->setMessageCb(messageCb_);
         conn->setConnectionCb(connCb_);
         conn->setHighWaterMarkCb(highWaterMarkCb_);
         conn->setWriteCompleteCb(writeCompleteCb_);
         conn->setCloseCb(boost::bind(&TcpServer::removeConnection,this,_1));
-        conn->establish();
+        ioLoop->runInLoop(boost::bind(&TcpConnection::establish,conn));
 
-        LOG_TRACE << "new conn bind to " << connList_[name]->getPeerAddr().addrString();
     }
 }
     
 
 void TcpServer::removeConnection(const ConnectionPtr& conn) {
+    if (loop_->isInLoopThread()) {
     connList_.erase(conn->getName());
+    }
+    else {
+        LOG_TRACE << "remove conn from diffrent thread";
+        loop_->runInLoop(boost::bind(&TcpServer::removeConnectionGuard,this,conn));
+    }
+}
+    
+void TcpServer::removeConnectionGuard(const ConnectionPtr& conn) {
     LOG_TRACE << "remove connection, name: " << conn->getName();
+    connList_.erase(conn->getName());
 }

@@ -26,7 +26,8 @@ bool Acceptor::listen() {
     listening_ = true;
     acceptSock_.listen();
     acceptChannel_.enableReading();
-    LOG_TRACE << "listen at " << acceptSock_.getAddr().addrString();
+    LOG_TRACE << "listen at " << acceptSock_.getAddr().addrString()
+              << " tid: " << CurrentThread::tid();
 }
 
 void Acceptor::handleRead() {

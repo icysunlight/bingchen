@@ -29,11 +29,16 @@ TcpConnection::~TcpConnection() {
 }
 
 void TcpConnection::establish() {
+    LOG_TRACE << "new conn bind to " << getPeerAddr().addrString() 
+              << "at thread: " << CurrentThread::tid();
+    assert(loop_->isInLoopThread()); 
     if (connCb_)
         connCb_(shared_from_this());
 
     connChannel_.enableReading();
     state_ = Connected;
+    LOG_TRACE << "new conn bind to " << getPeerAddr().addrString() 
+              << "at thread: " << CurrentThread::tid();
 }
 
 void TcpConnection::handleRead() {
@@ -54,7 +59,7 @@ void TcpConnection::handleRead() {
 
 void TcpConnection::handleClose() {
     connChannel_.disableAll();
-    loop_->queueInLoop(boost::bind(&TcpConnection::unregistConn,shared_from_this()));
+    loop_->runInLoop(boost::bind(&TcpConnection::unregistConn,shared_from_this()));
 }
     
 void TcpConnection::handleWrite() {
@@ -92,7 +97,7 @@ void TcpConnection::send(const std::string& content){
         sendInLoop(content);
     }
     else {
-        loop_->queueInLoop(boost::bind(&TcpConnection::sendInLoop,this,content));
+        loop_->runInLoop(boost::bind(&TcpConnection::sendInLoop,this,content));
     }
 }
     
@@ -117,7 +122,7 @@ void TcpConnection::sendInLoop(const std::string& content) {
          && outputBuffer_.readableBytes() >= highWaterMark_
          && highWaterMark_)
         {
-            loop_->queueInLoop(boost::bind(&TcpConnection::highWaterMarkCb_,shared_from_this()));
+            loop_->runInLoop(boost::bind(&TcpConnection::highWaterMarkCb_,shared_from_this()));
         }
         if (!connChannel_.isWriting()) {
             connChannel_.enableWriting();
@@ -130,7 +135,7 @@ void TcpConnection::shutdown() {
         shutdownInLoop();
     }
     else {
-        loop_->queueInLoop(boost::bind(&TcpConnection::shutdownInLoop,this));
+        loop_->runInLoop(boost::bind(&TcpConnection::shutdownInLoop,this));
     }
 }
     
