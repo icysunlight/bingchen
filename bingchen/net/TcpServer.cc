@@ -36,6 +36,8 @@ void TcpServer::OnConnection(int fd) {
         connList_[name] = conn->shared_from_this();
         conn->setMessageCb(messageCb_);
         conn->setConnectionCb(connCb_);
+        conn->setHighWaterMarkCb(highWaterMarkCb_);
+        conn->setWriteCompleteCb(writeCompleteCb_);
         conn->setCloseCb(boost::bind(&TcpServer::removeConnection,this,_1));
         conn->establish();
 

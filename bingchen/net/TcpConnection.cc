@@ -16,7 +16,8 @@ TcpConnection::TcpConnection(EventLoop* loop,std::string name,int fd,InetAddr lo
       localAddr_(localAddr),
       peerAddr_(connSock_.getAddr()),
       name_(name),
-      state_(Connecting)
+      state_(Connecting),
+      highWaterMark_(10 * 1024 * 1024)
 {
     connChannel_.setReadCallback(boost::bind(&TcpConnection::handleRead,this));
 //    LOG_TRACE << "buf size: " << connSock_.getSndBufSize();
@@ -46,9 +47,9 @@ void TcpConnection::handleRead() {
         LOG_TRACE << strerror(errno);
         return;
     }
-    else if (ret != 0)
+    else if (ret != 0) {
         messageCb_(shared_from_this(),&inBuf_);
-
+    }
 }
 
 void TcpConnection::handleClose() {
@@ -66,6 +67,9 @@ void TcpConnection::handleWrite() {
        outputBuffer_.retrieve(nwrote); 
        if (nwrote == twrite) {
            connChannel_.disbleWriting();
+           if (writeCompleteCb_) {
+               loop_->runInLoop(boost::bind(&TcpConnection::writeCompleteCb_,shared_from_this()));
+           }
            if (state_ == Disconnecting) {
                shutdownInLoop();
            }
@@ -101,9 +105,20 @@ void TcpConnection::sendInLoop(const std::string& content) {
            nwrote = 0; 
         }
     }
-
-    if (nwrote < content.size()) {
+    if (nwrote == content.size()) {
+        if (writeCompleteCb_) {
+            loop_->runInLoop(boost::bind(&TcpConnection::writeCompleteCb_,shared_from_this()));
+        }
+    }
+    else if (nwrote < content.size()) {
+        int oriSize = outputBuffer_.readableBytes();
         outputBuffer_.append(content.c_str() + nwrote,content.size() - nwrote);
+        if (oriSize < highWaterMark_
+         && outputBuffer_.readableBytes() >= highWaterMark_
+         && highWaterMark_)
+        {
+            loop_->queueInLoop(boost::bind(&TcpConnection::highWaterMarkCb_,shared_from_this()));
+        }
         if (!connChannel_.isWriting()) {
             connChannel_.enableWriting();
         }

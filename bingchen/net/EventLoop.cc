@@ -8,6 +8,16 @@
 #include <sys/eventfd.h>
 #include <boost/bind.hpp>
 
+#include <signal.h>
+
+class IgnoreSIGPIPE {
+public:
+    IgnoreSIGPIPE() {
+        ::signal(SIGPIPE,SIG_IGN);
+    }
+};
+IgnoreSIGPIPE ignoreSIGPIPEInit;
+
 
 using namespace bingchen;
 

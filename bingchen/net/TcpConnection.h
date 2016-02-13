@@ -27,12 +27,17 @@ public:
 
     void setMessageCb(const MessageCb_t& cb) {messageCb_ = cb;}
     void setConnectionCb(const ConnectionCb_t& cb) { connCb_ = cb;}
+    void setWriteCompleteCb(const ConnectionCb_t& cb) { writeCompleteCb_ = cb; }
+    void setHighWaterMarkCb(const ConnectionCb_t& cb) { highWaterMarkCb_ = cb; }
     void setCloseCb(const ConnectionCb_t& cb) { closeCb_ = cb; }
 
     void handleRead();
     void handleClose();
     void handleWrite();
     void unregistConn();
+
+    void setTcpNodelay(bool on) { connSock_.setNodelay(on);}
+    void setTcpKeepAlive(bool on) { connSock_.setKeepAlive(on); }
 
     InetAddr getLocalAddr() { return localAddr_; }
     InetAddr getPeerAddr() { return peerAddr_; }
@@ -51,6 +56,8 @@ private:
     Channel connChannel_;
     ConnectionCb_t connCb_;
     ConnectionCb_t closeCb_;
+    ConnectionCb_t writeCompleteCb_;
+    ConnectionCb_t highWaterMarkCb_;
     MessageCb_t messageCb_;
     InetAddr localAddr_;
     InetAddr peerAddr_;
@@ -61,6 +68,8 @@ private:
     stateE state_;
 
     std::string name_;
+
+    int highWaterMark_;
 };
 
 

@@ -41,8 +41,7 @@ Socket::~Socket() {
 
 void Socket::setNodelay(bool on) {
     int optval = on ? 1 : 0;
-    ::setsockopt(fd_,IPPROTO_TCP,TCP_NODELAY,
-                &optval,sizeof(optval));    
+    ::setsockopt(fd_,IPPROTO_TCP,TCP_NODELAY,&optval,sizeof(optval));    
 }
 
 void Socket::setAddrReuse(bool on) {

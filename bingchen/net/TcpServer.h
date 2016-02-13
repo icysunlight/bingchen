@@ -27,6 +27,8 @@ public:
 
     void setMessageCb(const MessageCb_t& cb) { messageCb_ = cb; }
     void setConnectionCb(const ConnectionCb_t& cb) { connCb_ = cb; }
+    void setWriteCompleteCb(const ConnectionCb_t& cb) { writeCompleteCb_ = cb; }
+    void setHighWaterMarkCb(const ConnectionCb_t& cb) { highWaterMarkCb_ = cb; }
 
 
 private:
@@ -35,6 +37,8 @@ private:
     ConnectionList_t connList_;
     MessageCb_t messageCb_;
     ConnectionCb_t connCb_;
+    ConnectionCb_t writeCompleteCb_;
+    ConnectionCb_t highWaterMarkCb_;
     InetAddr localAddr_;
 
     int connIndex_;
