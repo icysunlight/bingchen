@@ -24,6 +24,19 @@ public:
         return addr_;
     }
 
+    const struct sockaddr* sockaddr() const {
+        return (struct sockaddr*)&addr_;
+    }
+
+    int socklen() const {
+        return sizeof(addr_);
+    }
+
+    bool operator == (const InetAddr& addr) const {
+        return addr_.sin_port == addr.addr_.sin_port
+            && addr_.sin_addr.s_addr == addr.addr_.sin_addr.s_addr;
+    }
+
 private:
     struct sockaddr_in addr_;
 };

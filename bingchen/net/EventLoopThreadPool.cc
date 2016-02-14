@@ -2,6 +2,8 @@
 #include <cstdio>
 #include <boost/bind.hpp>
 
+#include "../base/logging.cc"
+
 using namespace bingchen;
 
 EventLoopThreadPool::EventLoopThreadPool(EventLoop* baseLoop)

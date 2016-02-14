@@ -68,6 +68,7 @@ void EventLoop::loop() {
                 << "at fd: " << wakeupFd_;
         }
         */
+        LOG_TRACE << "wakeupfd: " << wakeupFd_;
         doPendingTasks();
     }
 }
@@ -135,6 +136,7 @@ void EventLoop::wakeup() {
 void EventLoop::handleRead() {
     uint64_t context = 0;
     ::read(wakeupFd_,&context,sizeof(context));
+    LOG_TRACE;
 }
 
 void EventLoop::doPendingTasks() {

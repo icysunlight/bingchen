@@ -58,6 +58,9 @@ void TcpConnection::handleRead() {
 }
 
 void TcpConnection::handleClose() {
+    LOG_TRACE << "peer close at " << connSock_.getPeerAddr().addrString()
+              << "fd : " << connSock_.fd()
+              << "thread: " << CurrentThread::tid();
     connChannel_.disableAll();
     loop_->runInLoop(boost::bind(&TcpConnection::unregistConn,shared_from_this()));
 }

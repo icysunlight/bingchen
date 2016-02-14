@@ -27,6 +27,7 @@ int main() {
     server.setMessageCb(OnMessage);
     server.setConnectionCb(OnConn);
     server.start();
+    loop.loop();
 
 
     return 0;

@@ -35,6 +35,7 @@ void Acceptor::handleRead() {
 
     if (peerfd) {
         newConnectionCb_(peerfd);
+        LOG_TRACE;
         //LOG_TRACE << "new connection from " << peerSock.getAddr().addrString();
     }
 }

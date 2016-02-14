@@ -24,13 +24,14 @@ void TcpServer::start() {
     started_ = true;
     threadPool_->start(ioLoopInitCb_);
     acceptor_->listen();
-    loop_->loop();
 }
 
 void TcpServer::OnConnection(int fd) {
     //FIXME:unnormal use of accept result
     if (fd == -1)
         return;
+
+    LOG_TRACE;
 
     char buf[32];
     snprintf(buf,32,"%d",connIndex_++);

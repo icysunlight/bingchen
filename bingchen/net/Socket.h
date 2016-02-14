@@ -21,15 +21,22 @@ public:
     void bindAddr(const InetAddr& addr);
     void listen();
     int accept();
+    int connect(const InetAddr& addr);
+    int getSocketError();
+
 
     InetAddr getAddr();
+    InetAddr getPeerAddr();
+    InetAddr getLocalAddr();
 
     int fd() const {return fd_;}
 
     void close();
     void shutDownWrite();
+
+    bool isSelfConnect();
 private:
-    const int fd_;
+    int fd_;
 
 };
 

@@ -1,4 +1,4 @@
-#include "Socket.h"
+#include "SocketOps.h"
 
 #include <unistd.h>
 #include <fcntl.h>
@@ -24,12 +24,45 @@ void setNonBlockAndCloseOnExec(int sockfd) {
     ::fcntl(sockfd,F_SETFD,flags);
 }
 
-Socket::Socket() 
-    : fd_(socket(AF_INET,SOCK_STREAM,0))
-{
-   setNonBlockAndCloseOnExec(fd_); 
+int sockets::createSocket() {
+    int fd = socket(AF_INET,SOCK_STREAM,0);
+    setNonBlockAndCloseOnExec(fd); 
+    return fd;
 }
     
+int sockets::connect(int fd,const InetAddr& addr) {
+    return ::connect(fd,addr.sockaddr(),addr.socklen());
+}
+
+int sockets::getSocketError(int fd) {
+    int optval;
+    socklen_t len = sizeof(optval);
+    ::getsockopt(fd,SOL_SOCKET,SO_ERROR,&optval,&len);
+    return optval;
+}
+
+bool sockets::isSelfConnect(int fd) {
+    return getLocalAddr(fd) == getPeerAddr(fd);
+}
+
+InetAddr sockets::getPeerAddr(int fd) {
+    struct sockaddr_in addr;
+    memset(&addr,0,sizeof(addr));
+    socklen_t addrlen = static_cast<socklen_t>(sizeof(addr));
+    ::getpeername(fd,(struct sockaddr*)&addr,&addrlen);
+    return InetAddr(addr); 
+}
+
+InetAddr sockets::getLocalAddr(int fd) {
+    struct sockaddr_in addr;
+    memset(&addr,0,sizeof(addr));
+    socklen_t addrlen = static_cast<socklen_t>(sizeof(addr));
+    ::getsockname(fd,(struct sockaddr*)&addr,&addrlen);
+    return InetAddr(addr); 
+}
+/*
+ *
+ *
 Socket::Socket(int fd)
     : fd_(fd)
 {
@@ -87,9 +120,6 @@ int Socket::accept() {
     return peerfd;
 }
 
-int Socket::connect(const InetAddr& addr) {
-    return ::connect(fd_,addr.sockaddr(),addr.socklen());
-}
 
 InetAddr Socket::getAddr() {
     struct sockaddr_in addr;
@@ -99,21 +129,6 @@ InetAddr Socket::getAddr() {
     return InetAddr(addr); 
 }
 
-InetAddr Socket::getPeerAddr() {
-    struct sockaddr_in addr;
-    memset(&addr,0,sizeof(addr));
-    socklen_t addrlen = static_cast<socklen_t>(sizeof(addr));
-    ::getpeername(fd_,(struct sockaddr*)&addr,&addrlen);
-    return InetAddr(addr); 
-}
-
-InetAddr Socket::getLocalAddr() {
-    struct sockaddr_in addr;
-    memset(&addr,0,sizeof(addr));
-    socklen_t addrlen = static_cast<socklen_t>(sizeof(addr));
-    ::getsockname(fd_,(struct sockaddr*)&addr,&addrlen);
-    return InetAddr(addr); 
-}
 
 void Socket::close() {
     ::close(fd_);
@@ -123,13 +138,4 @@ void Socket::shutDownWrite() {
     ::shutdown(fd_,SHUT_WR);
 }
 
-int Socket::getSocketError() {
-    int optval;
-    socklen_t len = sizeof(optval);
-    ::getsockopt(fd_,SOL_SOCKET,SO_ERROR,&optval,&len);
-    return optval;
-}
-
-bool Socket::isSelfConnect() {
-    return getLocalAddr() == getPeerAddr();
-}
+*/

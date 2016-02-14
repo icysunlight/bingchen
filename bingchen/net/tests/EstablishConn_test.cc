@@ -28,6 +28,7 @@ int main() {
     server.setConnectionCb(OnConn);
     server.setThreadsNum(3);
     server.start();
+    loop.loop();
 
 
     return 0;

@@ -2,6 +2,8 @@
 #include "EventLoop.h"
 #include <poll.h>
 
+#include "../base/logging.h"
+
 using namespace bingchen;
 
 Channel::Channel(int fd,EventLoop* loop)
@@ -38,6 +40,7 @@ void Channel::handleEventWithGuard() {
     if (revents_ & (POLLIN | POLLPRI | POLLRDHUP))
     {
         if (readCallback_) {
+            LOG_TRACE;
             readCallback_();
         } 
     }

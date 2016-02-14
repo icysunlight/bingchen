@@ -12,3 +12,6 @@ target_link_libraries(Buffer_test bingchen_net)
 
 add_executable(SendMessage_test SendMessage_test.cc)
 target_link_libraries(SendMessage_test bingchen_net)
+
+add_executable(Connector_test Connector_test.cc)
+target_link_libraries(Connector_test bingchen_net)
