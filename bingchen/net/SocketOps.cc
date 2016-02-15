@@ -14,7 +14,7 @@
 
 using namespace bingchen;
 
-void setNonBlockAndCloseOnExec(int sockfd) {
+void sockets::setNonBlockAndCloseOnExec(int sockfd) {
     int flags = ::fcntl(sockfd,F_GETFL,0);
     flags |= O_NONBLOCK;
     ::fcntl(sockfd,F_SETFL,flags);

@@ -15,7 +15,7 @@ void OnConn(const ConnectionPtr& conn) {
 
 void OnMessage(const ConnectionPtr& conn,Buffer* buf) {
     std::string str = buf->retrieveAsString();
-    printf("read msg from %s\n",str);
+    printf("read msg :%s\n",str.c_str());
     conn->send(str);
 }
 

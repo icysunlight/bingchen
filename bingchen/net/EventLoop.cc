@@ -68,7 +68,6 @@ void EventLoop::loop() {
                 << "at fd: " << wakeupFd_;
         }
         */
-        LOG_TRACE << "wakeupfd: " << wakeupFd_;
         doPendingTasks();
     }
 }

@@ -39,6 +39,10 @@ void TcpConnection::establish() {
     state_ = Connected;
     LOG_TRACE << "new conn bind to " << getPeerAddr().addrString() 
               << "at thread: " << CurrentThread::tid();
+
+    if (initCb_) {
+        initCb_(shared_from_this());
+    }
 }
 
 void TcpConnection::handleRead() {
@@ -52,7 +56,7 @@ void TcpConnection::handleRead() {
         LOG_TRACE << strerror(errno);
         return;
     }
-    else if (ret != 0) {
+    else if (ret != 0 && messageCb_) {
         messageCb_(shared_from_this(),&inBuf_);
     }
 }

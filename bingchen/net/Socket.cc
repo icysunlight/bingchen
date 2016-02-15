@@ -1,4 +1,5 @@
 #include "Socket.h"
+#include "SocketOps.h"
 
 #include <unistd.h>
 #include <fcntl.h>
@@ -14,26 +15,17 @@
 
 using namespace bingchen;
 
-void setNonBlockAndCloseOnExec(int sockfd) {
-    int flags = ::fcntl(sockfd,F_GETFL,0);
-    flags |= O_NONBLOCK;
-    ::fcntl(sockfd,F_SETFL,flags);
-
-    flags = ::fcntl(sockfd,F_GETFD,0);
-    flags |= FD_CLOEXEC;
-    ::fcntl(sockfd,F_SETFD,flags);
-}
 
 Socket::Socket() 
     : fd_(socket(AF_INET,SOCK_STREAM,0))
 {
-   setNonBlockAndCloseOnExec(fd_); 
+    sockets::setNonBlockAndCloseOnExec(fd_); 
 }
     
 Socket::Socket(int fd)
     : fd_(fd)
 {
-   setNonBlockAndCloseOnExec(fd_); 
+    sockets::setNonBlockAndCloseOnExec(fd_); 
 }
 
 Socket::~Socket() {

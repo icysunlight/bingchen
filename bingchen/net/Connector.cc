@@ -3,6 +3,7 @@
 #include "Socket.h"
 #include "SocketOps.h"
 #include "../base/logging.h"
+#include "Channel.h"
 
 #include <boost/bind.hpp>
 

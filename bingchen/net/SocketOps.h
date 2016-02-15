@@ -13,6 +13,8 @@ int getSocketError(int fd);
 bool isSelfConnect(int fd);
 InetAddr getPeerAddr(int fd);
 InetAddr getLocalAddr(int fd);
+    
+void setNonBlockAndCloseOnExec(int fd); 
 
 /*
 void setNodelay(int fd,bool on);

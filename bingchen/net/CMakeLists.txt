@@ -13,6 +13,7 @@ set(net_SRCS
     EventLoopThreadPool.cc
     SocketOps.cc
     Connector.cc
+    TcpClient.cc
   )
 
 add_library(bingchen_net ${net_SRCS})

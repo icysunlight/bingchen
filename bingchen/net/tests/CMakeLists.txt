@@ -18,3 +18,6 @@ target_link_libraries(Connector_test bingchen_net)
 
 add_executable(CancelTimer_test CancelTimer_test.cc)
 target_link_libraries(CancelTimer_test bingchen_net)
+
+add_executable(TcpClient_test TcpClient_test.cc)
+target_link_libraries(TcpClient_test bingchen_net)

@@ -25,6 +25,7 @@ public:
     ~TcpConnection();
     void establish();
 
+    void setInitCb(const ConnectionCb_t& cb) { initCb_ = cb; }
     void setMessageCb(const MessageCb_t& cb) {messageCb_ = cb;}
     void setConnectionCb(const ConnectionCb_t& cb) { connCb_ = cb;}
     void setWriteCompleteCb(const ConnectionCb_t& cb) { writeCompleteCb_ = cb; }
@@ -58,6 +59,7 @@ private:
     ConnectionCb_t closeCb_;
     ConnectionCb_t writeCompleteCb_;
     ConnectionCb_t highWaterMarkCb_;
+    ConnectionCb_t initCb_;
     MessageCb_t messageCb_;
     InetAddr localAddr_;
     InetAddr peerAddr_;

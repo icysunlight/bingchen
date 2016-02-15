@@ -1,5 +1,5 @@
-#ifndef __BINGCHEN_NEW_INETADDR_H_
-#define __BINGCHEN_NEW_INETADDR_H_
+#ifndef __BINGCHEN_NET_INETADDR_H_
+#define __BINGCHEN_NET_INETADDR_H_
 #include <netinet/in.h>
 #include <string>
 
