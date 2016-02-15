@@ -15,3 +15,6 @@ target_link_libraries(SendMessage_test bingchen_net)
 
 add_executable(Connector_test Connector_test.cc)
 target_link_libraries(Connector_test bingchen_net)
+
+add_executable(CancelTimer_test CancelTimer_test.cc)
+target_link_libraries(CancelTimer_test bingchen_net)

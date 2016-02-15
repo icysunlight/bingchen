@@ -102,7 +102,7 @@ TimerId EventLoop::runEvery(int seconds,const boost::function<void ()>& cb) {
     return timerQueue_.addTimer(addTime(TimeStamp::now(),seconds),seconds,cb);
 }
 void EventLoop::cancelTimer(TimerId& timerId) {
-    timerQueue_.cancelTimer(timerId);
+    timerQueue_.cancel(timerId);
 }
 void EventLoop::runInLoop(const Task& task) {
     LOG_TRACE << "new task arrive at " << threadId_ << " from " <<  CurrentThread::tid();

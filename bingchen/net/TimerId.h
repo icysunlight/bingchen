@@ -9,7 +9,7 @@ namespace bingchen {
 class TimerId {
 public:
 
-    TimerId(Timer* timer)
+    TimerId(Timer* timer = NULL)
         : timer_(timer)
     {}
 

@@ -19,23 +19,24 @@ public:
     TimerId addTimer(TimeStamp expiration,double internval,boost::function<void ()> cb);
     void addTimerInThread(Timer* timer); 
 
-    void cancelTimer(TimerId id);
+    void cancel(TimerId id);
     void reset();
     void handleRead();
 
 
 private:
-    void cancelTimerInloop(TimerId id);
+    void cancelInLoop(TimerId id);
 
     typedef std::pair<TimeStamp,Timer*> Entry;
 
     std::set<Entry> activeTimers_;
-//    std::queue<Timer*> cancelingTimers_;
+    std::set<Entry> cancelingTimers_;
 
     int timerfd_;
     EventLoop* loop_;
     Channel channel_;
     TimeStamp expiration_;
+    bool callingTimers_;
 };
 
 

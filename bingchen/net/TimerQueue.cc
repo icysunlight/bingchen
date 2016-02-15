@@ -38,7 +38,8 @@ TimerQueue::TimerQueue(EventLoop* loop)
     : loop_(loop),
       timerfd_(createTimerfd()),
       channel_(timerfd_,loop),
-      expiration_(TimeStamp::invalid())
+      expiration_(TimeStamp::invalid()),
+      callingTimers_(false)
 {
     channel_.setReadCallback(boost::bind(&TimerQueue::handleRead,this));
     channel_.enableReading();
@@ -83,17 +84,22 @@ void TimerQueue::handleRead() {
         std::set<Entry>::iterator it = lower_bound(activeTimers_.begin(),activeTimers_.end(),entry);
         std::copy(activeTimers_.begin(),it,back_inserter(expiration));
         activeTimers_.erase(activeTimers_.begin(),it);
-
+    
+        callingTimers_ = true;
+        cancelingTimers_.clear();
         for (std::vector<Entry>::iterator it = expiration.begin() ; it != expiration.end() ; it++) {
             it->second->run();
         }
+        callingTimers_ = false;
 
         for (std::vector<Entry>::iterator it = expiration.begin() ; it != expiration.end() ; it++) {
-            if (it->second->repeat()) {
+            if (it->second->repeat() && cancelingTimers_.find(entry) != cancelingTimers_.end()) {
+                LOG_TRACE;
                 it->second->restart();
                 activeTimers_.insert(std::make_pair(it->second->expiration(),it->second));
             }
             else {
+                LOG_TRACE;
                 delete it->second;
             }
         }
@@ -102,15 +108,22 @@ void TimerQueue::handleRead() {
 
     reset();
 }
-//FIXME: 线程不安全
-void TimerQueue::cancelTimer(TimerId id) {
+
+void TimerQueue::cancel(TimerId id) {
+    loop_->runInLoop(boost::bind(&TimerQueue::cancelInLoop,this,id));
+}
+
+void TimerQueue::cancelInLoop(TimerId id) {
     Entry entry = std::make_pair(id.timer_->expiration(),id.timer_);
     std::set<Entry>::iterator it = activeTimers_.find(entry);
     if (it != activeTimers_.end()) {
         delete it->second;
         activeTimers_.erase(it);
         reset();
-        printf("delete a Timer\n");
+        LOG_TRACE << "delete a Timer";
     }
-    printf("delete a Timer\n");
+    else if (callingTimers_) {
+        cancelingTimers_.insert(entry);
+        LOG_TRACE << "delete a expired Timer";
+    }
 }
