@@ -19,11 +19,12 @@ Connector::Connector(EventLoop* loop,const InetAddr& addr)
     : loop_(loop),
       addr_(addr),
       start_(false),
-      waitTime_(1)
+      waitTime_(1),
+      state_(disconnected)
 {}
 
 void Connector::start() {
-    assert(!start_);
+    state_ = connecting;
     start_ = true;
     loop_->runInLoop(boost::bind(&Connector::connect,this));
 }
@@ -42,10 +43,24 @@ void Connector::connect() {
     }
 }
 
+    
+void Connector::stop() {
+    loop_->runInLoop(boost::bind(&Connector::stopInLoop,this));        
+}
+
+void Connector::stopInLoop() {
+    if (connecting == state_) {
+        if (channel_.get()) {
+            unregistConnect();
+        }
+        close(fd_);
+    }
+}
+
 void Connector::retry() {
     LOG_TRACE << "reconnect to " << addr_.addrString();
     close(fd_);
-    loop_->runAfter(waitTime_,boost::bind(&Connector::connect,this));
+    nextTimer_ = loop_->runAfter(waitTime_,boost::bind(&Connector::connect,this));
     waitTime_ <<= 1;
     if (waitTime_ > 30) {
         waitTime_ = 30;
@@ -82,6 +97,7 @@ void Connector::handleWrite() {
     }
     else {
         if (newConnectionCb_) {
+            state_ = connected;
             newConnectionCb_(fd_);
         }
     }

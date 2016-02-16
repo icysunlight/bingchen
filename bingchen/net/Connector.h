@@ -7,6 +7,7 @@
 #include <boost/scoped_ptr.hpp>
 
 #include "InetAddr.h"
+#include "TimerId.h"
 
 namespace bingchen {
 
@@ -17,6 +18,7 @@ class Connector
     : boost::noncopyable
 {
 public:
+    enum State {connecting,connected,disconnected};
     typedef boost::function<void (int)> NewConnectionCb;
     Connector(EventLoop* loop,const InetAddr& addr);
 
@@ -31,6 +33,7 @@ private:
     void unregistConnect();
     void resetChannel();
     void retry();
+    void stopInLoop();
 
     void handleWrite();
     void handleError();
@@ -43,6 +46,8 @@ private:
 
     bool start_;
     int waitTime_;
+    TimerId nextTimer_;
+    State state_;
 };
 };
 

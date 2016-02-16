@@ -46,12 +46,19 @@ void TcpClient::OnNewConnection(int fd) {
     }
 }
     
-void TcpClient::disconnect() {
-
+void TcpClient::disconnect() { 
+    if (conn_) {
+        conn_->shutdown();
+    }
 }
 
 void TcpClient::stop() {
+    connector_->stop();
 }
     
 void TcpClient::removeConnection() {
+    conn_.reset();
+    if (retry_) {
+        loop_->runInLoop(boost::bind(&TcpClient::connect,this));
+    }
 }

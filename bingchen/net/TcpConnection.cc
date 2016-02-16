@@ -66,7 +66,7 @@ void TcpConnection::handleClose() {
               << "fd : " << connSock_.fd()
               << "thread: " << CurrentThread::tid();
     connChannel_.disableAll();
-    loop_->runInLoop(boost::bind(&TcpConnection::unregistConn,shared_from_this()));
+    loop_->queueInLoop(boost::bind(&TcpConnection::unregistConn,shared_from_this()));
 }
     
 void TcpConnection::handleWrite() {

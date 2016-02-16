@@ -26,7 +26,7 @@ int main() {
     TcpServer server(&loop,InetAddr("192.168.32.128",55));
     server.setMessageCb(OnMessage);
     server.setConnectionCb(OnConn);
-    server.setThreadsNum(3);
+    server.setThreadsNum(0);
     server.start();
     loop.loop();
 

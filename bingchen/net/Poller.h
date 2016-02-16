@@ -2,29 +2,24 @@
 #define __BINGCHEN_NET_POLLER_H_
 
 #include <boost/noncopyable.hpp>
-#include <map>
 #include <vector>
-#include <poll.h>
 #include "EventLoop.h"
 
 namespace bingchen {
 
 class Channel;
 
-
 class Poller 
     : boost::noncopyable
 {
 public:
     Poller(EventLoop*);
-    void poll(int timeout,std::vector<Channel*>& activeChannels);
-    void fillChannels(int cntEvents,std::vector<Channel*>& activeChannels);
-    void updateChannel(Channel* channel);
-    void removeChannel(Channel* channel);
+    virtual void poll(int timeout,std::vector<Channel*>& activeChannels) = 0;
+    virtual void fillChannels(int cntEvents,std::vector<Channel*>& activeChannels) = 0;
+    virtual void updateChannel(Channel* channel) = 0;
+    virtual void removeChannel(Channel* channel) = 0;
 
-private:
-    std::vector<struct pollfd> pollfds_;
-    std::map<int,Channel*> channelMap_;
+protected:
     EventLoop* loop_;
 };
 

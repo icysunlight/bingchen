@@ -4,6 +4,8 @@
 #include "Poller.h"
 #include "TimerQueue.h"
 #include "EventLoop.h"
+#include "PPoller.h"
+#include "EPoller.h"
 
 #include <sys/eventfd.h>
 #include <boost/bind.hpp>
@@ -32,7 +34,7 @@ EventLoop::EventLoop()
     : quit_(false),
       running_(false),
       threadId_(CurrentThread::tid()),
-      poller_(new Poller(this)),
+      poller_(new PPoller(this)),
       timerQueue_(this),
       wakeupFd_(createEventFd()),
       wakeupChannel_(new Channel(wakeupFd_,this)),

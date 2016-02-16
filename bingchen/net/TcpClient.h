@@ -52,6 +52,7 @@ private:
 
     bool started_;
     bool retry_;
+    TimerId nextTimer_;
 };
 };
 

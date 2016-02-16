@@ -31,6 +31,7 @@ int main() {
     EventLoop loop;
     InetAddr addr("192.168.32.128",55);
     TcpClient client(&loop,addr);
+    client.enableRetry();
     client.setInitCb(connInit);
     client.setMessageCb(OnMessage);
     client.connect();
